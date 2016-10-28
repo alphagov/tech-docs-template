@@ -14,5 +14,9 @@
 
   <body>
     <%= yield %>
+
+    <% current_page.data.includes && current_page.data.includes.each do |include| %>
+      <%= partial "./#{include}" %>
+    <% end %>
   </body>
 </html>
