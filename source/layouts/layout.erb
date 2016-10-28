@@ -13,6 +13,8 @@
   </head>
 
   <body>
+    <a href="#content" class="skip-link">Skip to main content</a>
+
     <header class="header">
       <div class="header__logo">
         <a href="/">
@@ -34,10 +36,12 @@
       </nav>
     </header>
 
-    <%= yield %>
+    <div id="content">
+      <%= yield %>
 
-    <% current_page.data.includes && current_page.data.includes.each do |include| %>
-      <%= partial "./#{include}" %>
-    <% end %>
+      <% current_page.data.includes && current_page.data.includes.each do |include| %>
+        <%= partial "./#{include}" %>
+      <% end %>
+    </div>
   </body>
 </html>
