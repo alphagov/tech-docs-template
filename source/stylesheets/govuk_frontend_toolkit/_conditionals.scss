@@ -24,6 +24,19 @@
 
 $is-ie: false !default;
 $mobile-ie6: true !default;
+$is-print: false !default;
+
+@mixin screen {
+  @if not $is-print {
+    @content;
+  }
+}
+
+@mixin print {
+  @if $is-print {
+    @content;
+  }
+}
 
 @mixin media($size: false, $max-width: false, $min-width: false, $ignore-for-ie: false) {
   @if $is-ie and ($ignore-for-ie == false) {

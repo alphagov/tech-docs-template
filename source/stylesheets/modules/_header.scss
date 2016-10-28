@@ -1,0 +1,122 @@
+$active-nav-color: #1d8feb;
+
+.header {
+  @extend %contain-floats;
+  padding: 8px $gutter-half;
+
+  @include screen {
+    padding: 8px $gutter-half;
+    background: $black;
+    border-bottom: 10px solid $mainstream-brand;
+    color: $white;
+    
+    @include media(tablet) {
+      padding: 8px $gutter;
+    }
+  }
+}
+
+.header__logo {
+  font-size: 30px;
+  font-weight: bold;
+  
+  a:link, a:visited {
+    text-decoration: none;
+  }
+  
+  @include screen {
+    background-image: url('/images/gov.uk_logotype_crown-2x.png');
+    background-repeat: no-repeat;
+    background-size: 36px 32px;
+    
+    a:link, a:visited {
+      color: $white;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @include media(tablet) {
+      float: left;
+      background-position: 0 1px;
+      
+      a:hover {
+        text-decoration: none;
+        border-bottom: 1px solid $white;
+      }
+    }
+  }
+
+  @include print {
+    a:link, a:visited {
+      color: $black;
+    }
+  }
+}
+
+.header__printable-crown {
+  vertical-align: middle;
+  
+  @include screen {
+    visibility: hidden;
+  }
+}
+
+.header__title {
+  @include core-24;
+  display: block;
+  
+  @include media(tablet) {
+    display: inherit;
+    padding-left: 5px;
+  }
+}
+
+.header__navigation {
+  @include bold-16;
+  
+  margin-top: 10px;
+  border-top: 1px solid $grey-1;
+
+  a:link, a:visited {
+    color: $white;
+    text-decoration: none;
+  }
+
+  li.active a:link, li.active a:visited {
+    color: $active-nav-color;
+  }
+
+  a:hover, a:active {
+    text-decoration: underline;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    margin-top: 10px;
+  }
+
+  @include print {
+    display: none;
+  }
+
+  @include media(tablet) {
+    margin-top: 4px;
+    border-top: none;
+
+    ul {
+      float: right;
+    }
+
+    li {
+      float: left;
+      margin-left: $gutter-half;
+    }
+  }
+}

@@ -12,7 +12,18 @@
 @import "govuk_frontend_toolkit/measurements";
 @import "govuk_frontend_toolkit/typography";
 
+@import "modules/header";
+@import "modules/phase-banner";
+
 html, body {
+  margin: 0;
   -webkit-font-smoothing: antialiased;
   @include core-19;
+}
+
+// basic styles for HTML5 and other elements
+html, body, div, h1, h2, h3, h4, h5, h6, article, aside, footer, header, hgroup, nav, section {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
 }
