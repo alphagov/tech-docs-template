@@ -51,19 +51,14 @@ $active-nav-color: #1d8feb;
   }
 }
 
-.header__logo {
+.header__brand {
   font-size: 30px;
-  font-weight: bold;
   
   a:link, a:visited {
     text-decoration: none;
   }
   
   @include screen {
-    background-image: url('/images/gov.uk_logotype_crown-2x.png');
-    background-repeat: no-repeat;
-    background-size: 36px 32px;
-
     a:link, a:visited {
       color: $white;
     }
@@ -74,7 +69,6 @@ $active-nav-color: #1d8feb;
 
     @include media(tablet) {
       float: left;
-      background-position: 0 1px;
       
       a:hover {
         text-decoration: none;
@@ -87,14 +81,6 @@ $active-nav-color: #1d8feb;
     a:link, a:visited {
       color: $black;
     }
-  }
-}
-
-.header__printable-crown {
-  vertical-align: middle;
-  
-  @include screen {
-    visibility: hidden;
   }
 }
 
