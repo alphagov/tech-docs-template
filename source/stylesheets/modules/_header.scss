@@ -57,18 +57,26 @@ $active-nav-color: #1d8feb;
   a:link, a:visited {
     text-decoration: none;
   }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .govuk-logo {
+    float: left;
+  }
   
   @include screen {
     a:link, a:visited {
       color: $white;
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
     @include media(tablet) {
       float: left;
+      
+      .govuk-logo {
+        float: none;
+      }
       
       a:hover {
         text-decoration: none;
@@ -87,18 +95,28 @@ $active-nav-color: #1d8feb;
 .header__title {
   @include core-24;
   display: block;
+  float: left;
+  clear: left;
   
   @include media(tablet) {
     display: inherit;
+    float: none;
+    clear: none;
     padding-left: 5px;
+  }
+
+  .phase-banner {
+    margin-left: 5px;
   }
 }
 
 .header__navigation {
   @include bold-16;
   
-  margin-top: 10px;
-  border-top: 1px solid $grey-1;
+  display: none;
+  clear: both;
+
+  padding-top: 10px;
 
   a:link, a:visited {
     color: $white;
@@ -114,13 +132,14 @@ $active-nav-color: #1d8feb;
   }
 
   ul {
+    border-top: 1px solid $grey-1;
     margin: 0;
     padding: 0;
   }
 
   li {
     list-style: none;
-    margin-top: 10px;
+    margin-top: 12px;
   }
 
   @include print {
@@ -128,11 +147,14 @@ $active-nav-color: #1d8feb;
   }
 
   @include media(tablet) {
-    margin-top: 4px;
+    display: block;
+    clear: none;
+    padding-top: 2px;
     border-top: none;
+    float: right;
 
     ul {
-      float: right;
+      border-top: none;
     }
 
     li {
@@ -140,4 +162,45 @@ $active-nav-color: #1d8feb;
       margin-left: $gutter-half;
     }
   }
+}
+
+.header__navigation-toggle {
+  float: right;
+  color: $white;
+  text-decoration: none;
+  border: 1px solid $grey-1;
+  border-radius: 3px;
+  padding: 2px 6px 1px;
+  font-size: 80%;
+  font-weight: bold;
+  
+  input {
+    display: none;
+  }
+  
+  @include media(tablet) {
+    display: none;
+  }
+  
+  &:after {
+    display: inline-block;
+    font-size: 8px;
+    height: 8px;
+    padding-left: 5px;
+    vertical-align: middle;
+    content: " \25BC";
+  }
+}
+
+.header__navigation-toggle-checkbox {
+  position: absolute;
+  left: -9999em;
+}
+
+.header__navigation-toggle-checkbox:checked ~ .header__navigation-toggle:after {
+  content: "\25B2";
+}
+
+.header__navigation-toggle-checkbox:checked ~ .header__navigation {
+  display: block;
 }
