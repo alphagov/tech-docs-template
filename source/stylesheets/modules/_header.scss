@@ -2,17 +2,52 @@ $active-nav-color: #1d8feb;
 
 .header {
   @extend %contain-floats;
-  padding: 8px $gutter-half;
 
   @include screen {
-    padding: 8px $gutter-half;
     background: $black;
-    border-bottom: 10px solid $mainstream-brand;
     color: $white;
+    border-bottom: 10px solid $white;
+  }
+}
+
+.header__container {
+  @extend %site-width-container;
+  @extend %contain-floats;
+  
+  padding: 8px 0;
+
+  @include screen {
+    border-bottom: 10px solid $mainstream-brand;
+    margin-bottom: -10px;
+  }
+}
+
+.header.header--full-width {
+  margin-bottom: 0;
+  
+  @include screen {
+    border-bottom: 10px solid $mainstream-brand;
+  }
+  
+  .header__container {
+    border-bottom: none;
+    width: auto;
+    max-width: none;
+    margin: 0 $gutter-half;
     
     @include media(tablet) {
-      padding: 8px $gutter;
+      margin: 0 $gutter;
     }
+  }
+}
+
+.header--without-border {
+  border-bottom: none;
+  margin-bottom: 0;
+  
+  .header__container {
+    border-bottom: none;
+    margin-bottom: 0;
   }
 }
 
@@ -28,7 +63,7 @@ $active-nav-color: #1d8feb;
     background-image: url('/images/gov.uk_logotype_crown-2x.png');
     background-repeat: no-repeat;
     background-size: 36px 32px;
-    
+
     a:link, a:visited {
       color: $white;
     }
