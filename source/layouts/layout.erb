@@ -8,15 +8,52 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "GOV.UK Documentation" %></title>
 
-    <%= stylesheet_link_tag :site %>
-    <%= javascript_include_tag :all %>
+    <!--[if gt IE 8]><!--><%= stylesheet_link_tag :screen, media: 'screen' %><!--<![endif]-->
+    <!--[if lte IE 8]><%= stylesheet_link_tag 'screen-old-ie', media: 'screen' %><![endif]-->
+
+    <%= stylesheet_link_tag :print, media: 'print' %>
+    <%= javascript_include_tag :ie %>
   </head>
 
   <body>
-    <%= yield %>
+    <a href="#content" class="skip-link">Skip to main content</a>
 
-    <% current_page.data.includes && current_page.data.includes.each do |include| %>
-      <%= partial "./#{include}" %>
-    <% end %>
+    <header class="header header--full-width">
+      <div class="header__container">
+        <div class="header__brand">
+          <a href="/">
+            <span class="govuk-logo">
+              <img class="govuk-logo__printable-crown" src="/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
+              GOV.UK
+            </span>
+            <span class="header__title">
+              Platform as a Service <span class="phase-banner">Beta</span>
+            </span>
+          </a>
+        </div>
+
+        <input class="header__navigation-toggle-checkbox" type="checkbox" id="show-menu" />
+        <label class="header__navigation-toggle" for="show-menu">
+          Menu
+        </label>
+
+        <nav id="navigation" class="header__navigation">
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Get started</a></li>
+            <li class="active"><a href="#">Documentation</a></li>
+            <li><a href="#">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div id="content">
+      <%= yield %>
+
+      <% current_page.data.includes && current_page.data.includes.each do |include| %>
+        <%= partial "./#{include}" %>
+      <% end %>
+    </div>
   </body>
 </html>
