@@ -198,6 +198,10 @@ $active-nav-color: #1d8feb;
 .header__navigation-toggle-checkbox {
   position: absolute;
   left: -9999em;
+
+  @include media(tablet) {
+    display: none;
+  }
 }
 
 .header__navigation-toggle-checkbox:checked ~ .header__navigation-toggle:after {
