@@ -112,56 +112,58 @@ $active-nav-color: #1d8feb;
 }
 
 .header__navigation {
-  @include bold-16;
-  
-  display: none;
-  clear: both;
+  @include screen {
+    @include bold-16;
+    
+    display: none;
+    clear: both;
 
-  padding-top: 10px;
+    padding-top: 10px;
 
-  a:link, a:visited {
-    color: $white;
-    text-decoration: none;
-  }
+    a:link, a:visited {
+      color: $white;
+      text-decoration: none;
+    }
 
-  li.active a:link, li.active a:visited {
-    color: $active-nav-color;
-  }
+    li.active a:link, li.active a:visited {
+      color: $active-nav-color;
+    }
 
-  a:hover, a:active {
-    text-decoration: underline;
-  }
+    a:hover, a:active {
+      text-decoration: underline;
+    }
 
-  ul {
-    border-top: 1px solid $grey-1;
-    margin: 0;
-    padding: 0;
-  }
+    ul {
+      border-top: 1px solid $grey-1;
+      margin: 0;
+      padding: 0;
+    }
 
-  li {
-    list-style: none;
-    margin-top: 12px;
+    li {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    @include media(tablet) {
+      display: block;
+      clear: none;
+      padding-top: 2px;
+      border-top: none;
+      float: right;
+
+      ul {
+        border-top: none;
+      }
+
+      li {
+        float: left;
+        margin-left: $gutter-half;
+      }
+    }
   }
 
   @include print {
     display: none;
-  }
-
-  @include media(tablet) {
-    display: block;
-    clear: none;
-    padding-top: 2px;
-    border-top: none;
-    float: right;
-
-    ul {
-      border-top: none;
-    }
-
-    li {
-      float: left;
-      margin-left: $gutter-half;
-    }
   }
 }
 
