@@ -8,7 +8,9 @@
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "GOV.UK Documentation" %></title>
 
-    <%= stylesheet_link_tag :screen, media: 'screen' %>
+    <!--[if gt IE 8]><!--><%= stylesheet_link_tag :screen, media: 'screen' %><!--<![endif]-->
+    <!--[if lte IE 8]><%= stylesheet_link_tag 'screen-old-ie', media: 'screen' %><![endif]-->
+
     <%= stylesheet_link_tag :print, media: 'print' %>
     <%= javascript_include_tag :ie %>
   </head>
