@@ -32,7 +32,7 @@ This is an example of the error you would receive:
 ```
 Creating app APPLICATION in org ORG / space SPACE as USER...
 FAILED
-Server error, status code: 400, error code: 100007, message: 
+Server error, status code: 400, error code: 100007, message:
 You have exceeded the memory limit for your organization's quota.
 ```
 
@@ -78,23 +78,23 @@ The application cannot access more than the specified amount of memory.
 
 - The environment default of 512MB `memory` is sufficient for most applications. Static sites and utility applications such as schedulers or loaders may require less. Use `cf app APPNAME` to check your application's current memory and compute utilization.
 
+
 ```
 requested state: started
 instances: 1/1
 usage: 128M x 1 instances
-urls: 
+urls:
 last uploaded: Wed Jul 22 20:09:56 UTC 2015
-
-     state     since                    cpu    memory          disk          
-#0   running   2015-07-30 05:58:11 PM   0.0%   94.6M of 128M   80.4M of 128M    
-```  
+     state     since                    cpu    memory          disk
+\#0   running   2015-07-30 05:58:11 PM   0.0%   94.6M of 128M   80.4M of 128M
+```
 
 
 - Any application which exceeds its memory quota will be automatically restarted. Use `cf events APPNAME` to look for 'out of memory' crashes.
 
 ```
-... description   
-... index: 0, reason: CRASHED, exit_description: out of memory, exit_status: 255 
+... description
+... index: 0, reason: CRASHED, exit_description: out of memory, exit_status: 255
 ```
 
 
