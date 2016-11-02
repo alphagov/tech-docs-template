@@ -1,0 +1,52 @@
+# Tech Docs Template
+
+The Tech Docs Template is a static site generator to build technical documentation with a GOV.UK style for GaaP (Government as a Platform) products.
+
+## Getting started
+
+To preview or build the website, we need to use the terminal.
+
+Install Ruby with Rubygems, perferably with a [Ruby version manager](https://www.ruby-lang.org/en/documentation/installation/#managers), and the [Bundler gem](http://bundler.io/).
+
+In the application folder type the following to install the required gems:
+
+```
+$ bundle install
+```
+
+## Preview
+
+We can run a server that let's us see changes as we make them.
+
+Type the following to start the server:
+
+```
+$ bundle exec middleman server
+```
+
+If all goes well something like the following output will be displayed:
+
+```
+== The Middleman is loading
+== LiveReload accepting connections from ws://192.168.0.8:35729
+== View your site at "http://Laptop.local:4567", "http://192.168.0.8:4567"
+== Inspect your site configuration at "http://Laptop.local:4567/__middleman", "http://192.168.0.8:4567/__middleman"
+```
+
+We can see see that there are two URLs given to view our site, http://Laptop.local:4567 or http://192.168.0.8:4567. Copy and paste one of those into the browser to view the website.
+
+## Build
+
+When we are ready to publish the website, we need to build the static HTML files.
+
+Type the following to build the HTML:
+
+```
+$ bundle exec middleman build
+```
+
+This will create a `build` subfolder in the application folder which contains the HTML and asset files ready to be published.
+
+## Publish
+
+The simplest way to host the website is to copy via FTP the contents of the `build` folder to some hosting.
