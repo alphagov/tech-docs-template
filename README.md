@@ -14,6 +14,20 @@ In the application folder type the following to install the required gems:
 $ bundle install
 ```
 
+## Making changes
+
+To make changes edit the source files in the `source` folder.
+
+Although a single page of HTML is generated the markdown is spread across multiple files to make it easier to manage. They can be found in `source/documentation`.
+
+A new markdown file isn't automatically included in the generated output. If we add a new markdown file at the location `source/documentation/agile/scrum.md`, the following snippet in `source/index.html.md.erb`, includes it in the generated output.
+
+```
+<%= partial 'documentation/agile/scrum' %>
+```
+
+Including files manually like this lets us specify the position they appear in the page.
+
 ## Preview
 
 We can run a server that let's us see changes as we make them.
