@@ -35,12 +35,13 @@
       }
 
       .app-pane__toc {
-        flex: 1 0 30%;
+        flex: 0 0 auto;
+        width: 330px;
         border-right: 1px solid $grey-2;
       }
 
       .app-pane__content {
-        flex: 1 1 70%;
+        flex: 1 1 auto;
       }
     }
   }
