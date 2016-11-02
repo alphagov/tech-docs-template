@@ -1,6 +1,7 @@
 @include screen {
   @include media(tablet) {
-    @supports (display: flex) {
+    .flexbox {
+
       body {
         overflow: hidden;
       }
