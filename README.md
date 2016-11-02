@@ -1,6 +1,6 @@
 # Tech Docs Template
 
-The Tech Docs Template is a static site generator to build technical documentation with a GOV.UK style for GaaP (Government as a Platform) products.
+The Tech Docs Template is a static site generator to build technical documentation with a GOV.UK style for products that Government can use to build services.
 
 ## Getting started
 
