@@ -30,7 +30,9 @@ Including files manually like this lets us specify the position they appear in t
 
 ## Preview
 
-We can run a server that let's us see changes as we make them.
+Whilst writing documentation we can run a middleman server to preview how the published version will look in the browser. After saving a change the preview in the browser will automatically refresh.
+
+The preview is only available on our own computer. Others won't be able to access it if they are given the link.
 
 Type the following to start the server:
 
