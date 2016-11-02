@@ -65,4 +65,4 @@ This will create a `build` subfolder in the application folder which contains th
 
 ## Publish
 
-The simplest way to host the website is to copy via FTP the contents of the `build` folder to some hosting.
+Once built, the simplest way to host the website is to copy the contents of the build folder to some hosting via FTP.
