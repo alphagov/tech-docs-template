@@ -17,6 +17,7 @@
 @import "modules/header";
 @import "modules/phase-banner";
 @import "modules/skip-link";
+@import "modules/technical-documentation";
 @import "modules/toc";
 
 html, body {
@@ -46,12 +47,4 @@ a:hover {
 
 a:active {
   color: $link-active-colour;
-}
-
-#content {
-  margin: 10px $gutter-half;
-  
-  @include media(tablet) {
-    margin: $gutter-half $gutter;
-  }
 }
