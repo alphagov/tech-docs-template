@@ -15,7 +15,7 @@ Note that the only database service currently supported by PaaS is PostgreSQL. I
 
 1. Create a manifest.yml file in the folder where you checked out your app.
 
-    ```
+    ```yaml
     ---
     applications:
     - name: my-rails-app
