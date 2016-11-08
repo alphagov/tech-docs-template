@@ -32,8 +32,9 @@ configure :development do
   activate :livereload
 end
 
-activate :sprockets
 activate :autoprefixer
+activate :sprockets
+activate :syntax
 
 ###
 # Helpers

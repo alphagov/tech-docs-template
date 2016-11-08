@@ -12,6 +12,9 @@
 @import "govuk_frontend_toolkit/measurements";
 @import "govuk_frontend_toolkit/typography";
 
+@import "palette/syntax-highlighting";
+@import "syntax-highlighting";
+
 @import "modules/anchored-heading";
 @import "modules/app-pane";
 @import "modules/govuk-logo";

@@ -48,14 +48,15 @@
   }
 
   pre {
-    background: $grey-4;
+    background: $code-00;
     padding: 15px;
     overflow: auto;
     position: relative;
+    border: 1px solid $code-02;
   }
 
   code {
-    background: $grey-4;
+    background: $code-00;
     padding: 3px 3px;
     border-radius: 3px;
 
