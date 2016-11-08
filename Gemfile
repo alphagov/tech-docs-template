@@ -18,6 +18,8 @@ gem 'middleman-syntax', '~> 3.0.0'
 
 gem 'redcarpet', '~> 3.3.2'
 
+gem 'nokogiri'
+
 group :development, :test do
   gem 'jasmine'
 end

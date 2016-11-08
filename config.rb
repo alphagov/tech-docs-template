@@ -40,12 +40,10 @@ activate :syntax
 # Helpers
 ###
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+require 'vendor/table_of_contents/lib/helpers'
+helpers do
+  include TableOfContents::Helpers
+end
 
 # Build-specific configuration
 configure :build do
