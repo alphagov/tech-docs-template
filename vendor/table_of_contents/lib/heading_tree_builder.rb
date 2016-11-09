@@ -8,7 +8,7 @@ module TableOfContents
 
     def tree
       @headings.each do |heading|
-        move_to_depth(heading.importance)
+        move_to_depth(heading.size)
 
         @pointer.children << HeadingTree.new(parent: @pointer, heading: heading)
       end

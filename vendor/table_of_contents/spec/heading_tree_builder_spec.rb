@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe TableOfContents::HeadingTreeBuilder do
-  it 'creates a tree of headings depending on their importance' do
+  it 'creates a tree of headings depending on their size' do
     headings = [
       TableOfContents::Heading.new(element_name: 'h1', text: 'Apples', attributes: {'id' => 'apples'}),
       TableOfContents::Heading.new(element_name: 'h3', text: 'Apple recipes', attributes: {'id' => 'apple-recipes'}),

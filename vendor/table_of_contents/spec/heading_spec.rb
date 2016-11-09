@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe TableOfContents::Heading, '#importance' do
+describe TableOfContents::Heading, '#size' do
   it 'returns the level of the heading' do
     heading = described_class.new(element_name: 'h2', text: '', attributes: {})
 
-    expect(heading.importance).to eq(2)
+    expect(heading.size).to eq(2)
   end
 end
 

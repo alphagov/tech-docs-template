@@ -6,7 +6,7 @@ module TableOfContents
       @attributes = attributes
     end
 
-    def importance
+    def size
       @element_name.scan(/h(\d)/) && $1 && Integer($1)
     end
 
