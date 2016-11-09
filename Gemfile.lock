@@ -110,6 +110,7 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    redcarpet (3.3.4)
     sass (3.4.22)
     servolux (0.12.0)
     sprockets (3.7.0)
@@ -131,6 +132,7 @@ DEPENDENCIES
   middleman-compass (>= 4.0.0)
   middleman-livereload
   middleman-sprockets (~> 4.0.0)
+  redcarpet (~> 3.3.2)
   tzinfo-data
   wdm (~> 0.1.0)
 

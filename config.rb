@@ -2,6 +2,12 @@
 # Page options, layouts, aliases and proxies
 ###
 
+set :markdown_engine, :redcarpet
+set :markdown,
+  fenced_code_blocks: true,
+  smartypants: true,
+  with_toc_data: true
+
 # Per-page layout changes:
 #
 # With no layout

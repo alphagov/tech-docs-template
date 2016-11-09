@@ -1,0 +1,63 @@
+.technical-documentation {
+  margin: 0 $gutter-half 10px;
+  max-width: 40em;
+
+  line-height: 1.6;
+  
+  @include media(tablet) {
+    margin: 0 $gutter $gutter;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    padding-top: $gutter-half;
+  }
+
+  ol, ul {
+    padding-left: $gutter-half;
+    
+    @include media(desktop) {
+      padding-left: $gutter;
+    }
+  }
+
+  h1 {
+    border-top: 5px solid $text-colour;
+    margin-top: $gutter * 2;
+  }
+
+  h1:first-child {
+    border-top: none;
+    margin-top: 0;
+  }
+
+  blockquote {
+    background: $grey-4;
+    padding: $gutter-half;
+    margin: $gutter-half;
+    border-left: 5px solid $grey-3;
+  }
+
+  pre {
+    background: $grey-4;
+    padding: 15px;
+    overflow: auto;
+    position: relative;
+  }
+
+  code {
+    background: $grey-4;
+    padding: 3px 3px;
+    border-radius: 3px;
+    
+    // Handle long strings (URLs, long variable names, etc) by allowing them 
+    // to break anywhere if required.
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+  }
+}
