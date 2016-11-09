@@ -1,0 +1,48 @@
+@include screen {
+  @include media(tablet) {
+    .flexbox {
+
+      body {
+        overflow: hidden;
+      }
+
+      .app-pane {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        height: 100vh;
+      }
+
+      .app-pane__header {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
+        
+        > * {
+          flex: 1 0 auto;
+        }
+      }
+
+      .app-pane__body {
+        display: flex;
+        flex: 1 1 100%;
+        
+        > * {
+          overflow-x: scroll;
+          -webkit-overflow-scrolling: touch;
+          -ms-overflow-style: none;
+        }
+      }
+
+      .app-pane__toc {
+        flex: 0 0 auto;
+        width: 330px;
+        border-right: 1px solid $grey-2;
+      }
+
+      .app-pane__content {
+        flex: 1 1 auto;
+      }
+    }
+  }
+}

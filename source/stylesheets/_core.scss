@@ -12,10 +12,12 @@
 @import "govuk_frontend_toolkit/measurements";
 @import "govuk_frontend_toolkit/typography";
 
+@import "modules/app-pane";
 @import "modules/govuk-logo";
 @import "modules/header";
 @import "modules/phase-banner";
 @import "modules/skip-link";
+@import "modules/toc";
 
 html, body {
   margin: 0;
@@ -28,4 +30,28 @@ html, body, div, h1, h2, h3, h4, h5, h6, article, aside, footer, header, hgroup,
   margin: 0;
   padding: 0;
   vertical-align: baseline;
+}
+
+a:link {
+  color: $link-colour;
+}
+
+a:visited {
+  color: $link-visited-colour;
+}
+
+a:hover {
+  color: $link-hover-colour;
+}
+
+a:active {
+  color: $link-active-colour;
+}
+
+#content {
+  margin: 10px $gutter-half;
+  
+  @include media(tablet) {
+    margin: $gutter-half $gutter;
+  }
 }
