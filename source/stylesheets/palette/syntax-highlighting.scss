@@ -10,14 +10,14 @@ $code-05: $text-colour; /* Default Foreground, Caret, Delimiters, Operators */
 $code-06: #ffffff; /* Light Foreground (Unused) */
 $code-07: #ffffff; /* Light Background (Unused) */
 
-$code-08: #B23F29; /* Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted */
-$code-09: #0F7977; /* Integers, Boolean, Constants, XML Attributes, Markup Link Url */
-$code-0A: #795da3; /* Classes, Markup Bold, Search Text Background */
-$code-0B: $govuk-blue; /* Strings, Inherited Class, Markup Code, Diff Inserted */
+$code-08: #B26749; /* Variables, XML Tags, Markup Link Text, Markup Lists */
+$code-09: #0E7754; /* Integers, Boolean, Constants, XML Attributes, Markup Link Url */
+$code-0A: #4C4077; /* Classes, Markup Bold, Search Text Background */
+$code-0B: $govuk-blue; /* Strings, Inherited Class, Markup Code */
 $code-0C: $govuk-blue; /* Support, Regular Expressions, Escape Characters, Markup Quotes */
-$code-0D: #795da3; /* Functions, Methods, Attribute IDs, Headings */
-$code-0E: #a71d5d; /* Keywords, Storage, Selector, Markup Italic, Diff Changed */
-$code-0F: darken($mellow-red, 2%);; /* Deprecated, Opening/Closing Embedded Language Tags e.g. <?php ?> (Unused) */
+$code-0D: #4C4077; /* Functions, Methods, Attribute IDs, Headings */
+$code-0E: #a71d5d; /* Keywords, Storage, Selector, Markup Italic */
+$code-0F: #C92424; /* Deprecated, Opening/Closing Embedded Language Tags e.g. <?php ?> (Unused) */
 
 $code-insert-bg: #DEF8CA;
 $code-delete-bg: #FADDDD;
