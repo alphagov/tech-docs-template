@@ -18,7 +18,7 @@ gem 'middleman-syntax', '~> 3.0.0'
 
 gem 'redcarpet', '~> 3.3.2'
 
-gem 'nokogiri'
+gem 'table_of_contents', path: 'vendor/table_of_contents'
 
 group :development, :test do
   gem 'jasmine'

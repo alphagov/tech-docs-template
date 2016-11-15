@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'helpers'
+require 'table_of_contents/helpers'
 
 describe TableOfContents::Helpers, '#table_of_contents' do
   class Subject

@@ -40,8 +40,8 @@ activate :syntax
 # Helpers
 ###
 
-require 'vendor/table_of_contents/lib/helpers'
 helpers do
+  require 'table_of_contents/helpers'
   include TableOfContents::Helpers
 end
 

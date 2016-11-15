@@ -1,12 +1,16 @@
+PATH
+  remote: .
+  specs:
+    table_of_contents (0.1.0)
+      nokogiri
+
 GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.5)
     mini_portile2 (2.1.0)
-    nokogiri (1.6.8)
+    nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
-      pkg-config (~> 1.1.7)
-    pkg-config (1.1.7)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -25,8 +29,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  nokogiri
   rspec
+  table_of_contents!
 
 BUNDLED WITH
-   1.10.6
+   1.13.6
