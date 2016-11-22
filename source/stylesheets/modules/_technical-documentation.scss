@@ -42,6 +42,7 @@
     padding: 15px;
     overflow: auto;
     position: relative;
+    @include with-scrollbars;
   }
 
   code {
