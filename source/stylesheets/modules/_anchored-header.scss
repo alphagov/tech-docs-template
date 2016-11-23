@@ -1,0 +1,14 @@
+.anchored-heading {
+  position: relative;
+}
+
+.anchored-heading__icon {
+  position: absolute;
+  display: none;
+  text-decoration: none;
+  left: -1em;
+}
+
+.anchored-heading:hover .anchored-heading__icon {
+  display: block;
+}

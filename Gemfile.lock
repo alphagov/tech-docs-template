@@ -8,6 +8,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.4.0)
+    ast (2.3.0)
     backports (3.6.8)
     chunky_png (1.3.7)
     coffee-script (2.4.1)
@@ -28,6 +29,7 @@ GEM
       sass (>= 3.2, < 3.5)
     concurrent-ruby (1.0.2)
     contracts (0.13.0)
+    diff-lcs (1.2.5)
     dotenv (2.1.1)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -39,6 +41,9 @@ GEM
     fastimage (2.0.0)
       addressable (~> 2)
     ffi (1.9.14)
+    govuk-lint (1.2.1)
+      rubocop (~> 0.39.0)
+      scss_lint
     haml (4.0.7)
       tilt
     hamster (3.0.0)
@@ -95,8 +100,11 @@ GEM
     middleman-sprockets (4.0.0)
       middleman-core (~> 4.0)
       sprockets (>= 3.0)
+    mini_portile2 (2.1.0)
     minitest (5.9.1)
     multi_json (1.12.1)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
     padrino-helpers (0.13.3.2)
       i18n (~> 0.6, >= 0.6.7)
       padrino-support (= 0.13.3.2)
@@ -104,14 +112,45 @@ GEM
     padrino-support (0.13.3.2)
       activesupport (>= 3.1)
     parallel (1.9.0)
+    parser (2.3.2.0)
+      ast (~> 2.2)
+    powerpack (0.1.1)
     rack (1.6.4)
     rack-livereload (0.3.16)
       rack
+    rainbow (2.1.0)
+    rake (11.3.0)
     rb-fsevent (0.9.8)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     redcarpet (3.3.4)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.4)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-html-matchers (0.8.1)
+      nokogiri (~> 1)
+      rspec (>= 3.0.0.a, < 4)
+    rspec-mocks (3.4.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
+    rubocop (0.39.0)
+      parser (>= 2.3.0.7, < 3.0)
+      powerpack (~> 0.1)
+      rainbow (>= 1.99.1, < 3.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (~> 1.0, >= 1.0.1)
+    ruby-progressbar (1.8.1)
     sass (3.4.22)
+    scss_lint (0.50.3)
+      rake (>= 0.9, < 12)
+      sass (~> 3.4.20)
     servolux (0.12.0)
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
@@ -123,18 +162,22 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.3)
       execjs (>= 0.3.0, < 3)
+    unicode-display_width (1.1.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  govuk-lint
   middleman (>= 4.0.0)
   middleman-compass (>= 4.0.0)
   middleman-livereload
   middleman-sprockets (~> 4.0.0)
   redcarpet (~> 3.3.2)
+  rspec
+  rspec-html-matchers
   tzinfo-data
   wdm (~> 0.1.0)
 
 BUNDLED WITH
-   1.12.0
+   1.12.1

@@ -12,6 +12,13 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'middleman', '>= 4.0.0'
 gem 'middleman-livereload'
 gem 'middleman-compass', '>= 4.0.0'
-gem 'middleman-sprockets', '~> 4.0.0' 
+gem 'middleman-sprockets', '~> 4.0.0'
 
 gem 'redcarpet', '~> 3.3.2'
+
+gem 'govuk-lint'
+
+group :test do
+  gem 'rspec'
+  gem 'rspec-html-matchers'
+end
