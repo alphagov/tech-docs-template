@@ -1,5 +1,7 @@
 # Tech Docs Template
 
+> :warning: This is still in the early development stages and is **not yet ready for production use**.
+
 The Tech Docs Template is a static site generator to build technical documentation with a GOV.UK style for products that Government can use to build services.
 
 ## Getting started
