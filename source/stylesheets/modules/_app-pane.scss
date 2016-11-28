@@ -26,6 +26,7 @@
       .app-pane__body {
         display: flex;
         flex: 1 1 100%;
+        min-height: 0;
         
         > * {
           overflow-x: scroll;
