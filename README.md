@@ -66,3 +66,13 @@ This will create a `build` subfolder in the application folder which contains th
 ## Publish
 
 Once built, the simplest way to host the website is to copy the contents of the build folder to some hosting via FTP.
+
+## Tests
+
+We have some automated JavaScript tests that use [Jasmine](https://jasmine.github.io/) as a test framework. If you're only making changes to content, you shouldn't need to touch these, but it's worth running them when making any changes that might alter JS behaviour.
+
+To run the tests on your machine:
+
+- Run `bundle exec rake jasmine`
+- Navigate to `http://localhost:8888` in a browser of your choosing
+- Peruse the output of your tests
