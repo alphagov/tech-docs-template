@@ -55,8 +55,12 @@
     border: 1px solid $code-02;
   }
 
+  pre code {
+    background: none;
+  }
+
   code {
-    background: $code-00;
+    background: $code-01;
     padding: 3px 3px;
     border-radius: 3px;
 
