@@ -3,9 +3,11 @@
   max-width: 40em;
 
   line-height: 1.6;
-  
+
   @include media(tablet) {
-    margin: 0 $gutter $gutter;
+    // We add 2 pixels to the gutter here to ensure there's sufficient spacing between
+    // an anchor link (see _anchored-heading.scss) on a heading and the left-hand pane.
+    margin: 0 ($gutter + 2px) $gutter;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -14,7 +16,7 @@
 
   ol, ul {
     padding-left: $gutter-half;
-    
+
     @include media(desktop) {
       padding-left: $gutter;
     }
@@ -48,12 +50,12 @@
     background: $grey-4;
     padding: 3px 3px;
     border-radius: 3px;
-    
-    // Handle long strings (URLs, long variable names, etc) by allowing them 
+
+    // Handle long strings (URLs, long variable names, etc) by allowing them
     // to break anywhere if required.
     overflow-wrap: break-word;
     word-wrap: break-word;
-    
+
     -ms-word-break: break-all;
     /* This is the dangerous one in WebKit, as it breaks things wherever */
     word-break: break-all;
