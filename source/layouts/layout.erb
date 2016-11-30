@@ -39,7 +39,7 @@
               Menu
             </label>
 
-            <nav id="navigation" class="header__navigation">
+            <nav id="navigation" class="header__navigation" aria-label="Top Level Navigation">
               <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#getstarted">Get started</a></li>
@@ -53,7 +53,7 @@
 
       <div class="app-pane__body">
         <div class="app-pane__toc">
-          <nav class="toc">
+          <nav class="toc" aria-label="Table of Contents">
             <ul>
               <li>
                 <a href="#deploying-apps">Deploying apps</a>
@@ -159,9 +159,9 @@
         </div>
 
         <div class="app-pane__content">
-          <div id="content" class="technical-documentation" data-module="anchored-headings">
+          <main id="content" class="technical-documentation" data-module="anchored-headings">
             <%= yield %>
-          </div>
+          </main>
         </div>
       </div>
     </div>
