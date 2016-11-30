@@ -35,12 +35,27 @@ activate :sprockets
 # Helpers
 ###
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def grab(file)
+    File.read(Dir["source/" + file + "*"].first)
+  end
+
+  def table_of_contents(content)
+    toc_renderer = Redcarpet::Render::HTML_TOC.new
+    markdown = Redcarpet::Markdown.new(toc_renderer)
+    markdown.render(content)
+  end
+
+  def render_markdown(content)
+    toc_renderer = Redcarpet::Render::HTML.new(
+      fenced_code_blocks: true,
+      smartypants: true,
+      with_toc_data: true
+    )
+    markdown = Redcarpet::Markdown.new(toc_renderer)
+    markdown.render(content)
+  end
+end
 
 # Build-specific configuration
 configure :build do
