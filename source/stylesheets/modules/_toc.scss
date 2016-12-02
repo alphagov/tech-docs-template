@@ -85,19 +85,50 @@
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         color: $text-colour;
         text-decoration: none;
+        
+        &__icon {
+          width: 20px;
+          height: 20px;
+          float: right;
+          
+          background-image: image-url('govuk-icn-numbered-list.png');
+          background-repeat: no-repeat;
+          background-position: left center;
+
+          @include device-pixel-ratio {
+            background-image: image-url('govuk-icn-numbered-list@2x.png');
+            background-size: 20px 20px;
+          }
+        }
       }
 
       .toc__close {
         display: block;
         position: fixed;
-        padding: 8px 4px;
         right: $gutter-half;
         top: $gutter-half;
+        
+        width: 20px;
+        height: 20px;
+        float: right;
+        
+        text-indent: -10000px;
+        
+        background-image: image-url('govuk-icn-close.png');
+        background-repeat: no-repeat;
+        background-position: left center;
+
+        @include device-pixel-ratio {
+          background-image: image-url('govuk-icn-close@2x.png');
+          background-size: 20px 20px;
+        }
       }
 
       /* Applied to <html> */
       &.toc-open {
-        &, body {
+        overflow: hidden;
+
+        body {
           height: 100%;
           overflow: hidden;
         }
