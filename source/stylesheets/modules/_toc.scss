@@ -1,46 +1,138 @@
-.toc {
-  @include screen {
-    @include core-16;
-    
-    margin: $gutter-half;
-    
-    @include media(tablet) {
-      margin: $gutter-half $gutter;
-    }
+@include screen {
+  .toc {
 
+    @include core-16;
+    padding: $gutter-half;
+    
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-    
-    li li {
-      margin-left: $gutter-half;
+
+    &__close {
+      display: none;
     }
 
     a:link, a:visited {
       text-decoration: none;
-      display: block;
-      padding: 8px 0;
     }
 
     a:hover {
       text-decoration: underline;
     }
 
-    > ul {
-      > li > a {
-        @include bold-16;
+    &__list {
 
-        &:after {
-          content: "\203A";
-          float: right;
-        }
+      a:link, a:visited {
+        display: block;
+        padding: 8px 0;
+      }
+
+      > ul > li > a {
+        @include bold-16;
+      }
+
+      // Second Level
+      > ul > li > ul {
+        margin-bottom: 20px;
+      }
+
+      // Third Level & Below
+      li li li {
+        margin-left: $gutter-half;
       }
     }
   }
 
-  @include print {
+  .toc-show {
+    display: none;
+  }
+
+  @include media(tablet) {
+    .toc {
+      padding: $gutter-half $gutter;
+    }
+  }
+
+  @include media(mobile) {
+    .js-enabled {
+      .toc {
+        display: none;
+        
+        // Hide third level nav and below on mobile
+        li li li {
+          display: none;
+        }
+      }
+
+      .toc-show {
+        position: sticky;
+        top: 0;
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        z-index: 10;
+        
+        padding: $gutter-half $gutter-half 10px;
+        
+        background: $grey-4;
+        @supports(backdrop-filter: blur(2px)) {
+          background: transparentize($grey-4, 0.05);
+          backdrop-filter: blur(2px);
+        }
+        border-bottom: 1px solid $grey-2;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        color: $text-colour;
+        text-decoration: none;
+      }
+
+      .toc__close {
+        display: block;
+        position: fixed;
+        padding: 8px 4px;
+        right: $gutter-half;
+        top: $gutter-half;
+      }
+
+      /* Applied to <html> */
+      &.toc-open {
+        &, body {
+          height: 100%;
+          overflow: hidden;
+        }
+
+        .toc-show {
+          visibility: hidden;
+        }
+        
+        .toc {
+          display: block;
+          padding-right: $gutter * 2;
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 10;
+          
+          overflow: auto;
+          -webkit-overflow-scrolling: touch;
+          -ms-overflow-style: none;
+
+          background: $white;
+          @supports(backdrop-filter: blur(2px)) {
+            background: transparentize($white, 0.05);
+            backdrop-filter: blur(2px);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include print {
+  .toc {
     display: none;
   }
 }
