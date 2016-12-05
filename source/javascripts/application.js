@@ -3,4 +3,6 @@
 //= require vendor/fixedsticky
 //= require start-modules
 
-$('.fixedsticky').fixedsticky();
+$(function() {
+  $('.fixedsticky').fixedsticky();
+});
