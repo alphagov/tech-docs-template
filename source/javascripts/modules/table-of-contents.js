@@ -23,9 +23,9 @@
     }
 
     function preventingScrolling(callback) {
-      return function () {
+      return function (event) {
+        event.preventDefault();
         callback();
-        return false;
       }
     }
   };
