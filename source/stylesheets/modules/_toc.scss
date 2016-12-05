@@ -67,24 +67,30 @@
       }
 
       .toc-show {
+        display: block;
         position: sticky;
         top: 0;
-        display: block;
         box-sizing: border-box;
         width: 100%;
         z-index: 10;
         
-        padding: $gutter-half $gutter-half 10px;
-        
-        background: $grey-4;
-        @supports(backdrop-filter: blur(2px)) {
-          background: transparentize($grey-4, 0.05);
-          backdrop-filter: blur(2px);
+        &__label {
+          display: block;
+          position: relative;
+          z-index: 10;
+          
+          padding: $gutter-half $gutter-half 10px;
+          
+          background: $grey-4;
+          @supports(backdrop-filter: blur(2px)) {
+            background: transparentize($grey-4, 0.05);
+            backdrop-filter: blur(2px);
+          }
+          border-bottom: 1px solid $grey-2;
+          box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+          color: $text-colour;
+          text-decoration: none;
         }
-        border-bottom: 1px solid $grey-2;
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-        color: $text-colour;
-        text-decoration: none;
         
         &__icon {
           width: 20px;
