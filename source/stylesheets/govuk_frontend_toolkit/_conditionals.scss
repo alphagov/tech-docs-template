@@ -51,11 +51,11 @@ $is-print: false !default;
         @content;
       }
     } @else if $size == tablet {
-      @media (min-width: 641px){
+      @media (min-width: 741px){
         @content;
       }
     } @else if $size == mobile {
-      @media (max-width: 640px){
+      @media (max-width: 740px){
         @content;
       }
     } @else if $max-width != false {
