@@ -1,3 +1,5 @@
+require 'lib/tech_docs_html_renderer'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -6,7 +8,8 @@ set :markdown_engine, :redcarpet
 set :markdown,
   fenced_code_blocks: true,
   smartypants: true,
-  with_toc_data: true
+  with_toc_data: true,
+  renderer: TechDocsHTMLRenderer
 
 # Per-page layout changes:
 #
