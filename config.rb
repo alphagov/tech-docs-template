@@ -33,6 +33,7 @@ configure :development do
 end
 
 activate :sprockets
+activate :autoprefixer
 
 ###
 # Helpers

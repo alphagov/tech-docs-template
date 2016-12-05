@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
@@ -12,6 +12,7 @@
     <!--[if lte IE 8]><%= stylesheet_link_tag 'screen-old-ie', media: 'screen' %><![endif]-->
 
     <%= stylesheet_link_tag :print, media: 'print' %>
+
     <%= javascript_include_tag :application %>
   </head>
 
@@ -51,111 +52,117 @@
         </header>
       </div>
 
+      <div id="toc-heading" class="toc-show fixedsticky">
+        <a href="#toc" class="toc-show__label js-toc-show">
+          Table of Contents <span class="toc-show__icon"></span>
+        </a>
+      </div>
+
       <div class="app-pane__body">
         <div class="app-pane__toc">
-          <nav class="toc" aria-label="Table of Contents">
-            <ul>
-              <li>
-                <a href="#deploying-apps">Deploying apps</a>
-                <ul>
-                  <li><a href="#deployment-overview">Deployment overview</a></li>
-                  <li><a href="#caveats">Caveats</a></li>
-                  <li><a href="#excluding-files">Excluding files</a></li>
-                  <li>
-                    <a href="#environment-variables">Environment variables</a>
-                    <ul>
-                      <li><a href="#system-provided-environment-variables">System-provided environment variables</a></li>
-                      <li><a href="#further-reading">Further reading</a></li>
-                    </ul>
-                  </li>
+          <div class="toc" data-module="table-of-contents">
+            <a href="#" class="toc__close js-toc-close">Close</a>
+            <nav class="toc__list" id="toc" aria-labelledby="toc-heading">
+              <ul id="toc" class="js-toc-list">
+                <li>
+                  <a href="#deploying-apps">Deploying apps</a>
+                  <ul>
+                    <li><a href="#deployment-overview">Deployment overview</a></li>
+                    <li><a href="#caveats">Caveats</a></li>
+                    <li><a href="#excluding-files">Excluding files</a></li>
+                    <li>
+                      <a href="#environment-variables">Environment variables</a>
+                      <ul>
+                        <li><a href="#system-provided-environment-variables">System-provided environment variables</a></li>
+                        <li><a href="#further-reading">Further reading</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#orgs-spaces-and-targets">Orgs, spaces and targets</a></li>
+                    <li>
+                      <a href="#deploying-a-static-site">Deploying a static site</a>
+                      <ul>
+                        <li><a href="#adding-more-instances">Adding more instances</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#deploying-a-ruby-on-rails-app">Deploying a Ruby on Rails app</a>
+                      <ul>
+                        <li><a href="#web-servers">Web servers</a></li>
+                        <li><a href="#troubleshooting-asset-precompilation">Troubleshooting asset precompilation</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#deploying-a-node-js-app">Deploying a Node.js app</a>
+                      <ul>
+                        <li><a href="#postgresql-setup-with-node-js">PostgreSQL setup with Node.js</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#deploying-a-django-app">Deploying a Django app</a>
+                      <ul>
+                        <li><a href="#postgresql-setup-with-django">PostgreSQL setup with Django</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#production-checklist">Production checklist</a></li>
+                  </ul>
+                </li>
 
-                  <li><a href="#orgs-spaces-and-targets">Orgs, spaces and targets</a></li>
-                  <li>
-                    <a href="#deploying-a-static-site">Deploying a static site</a>
-                    <ul>
-                      <li><a href="#adding-more-instances">Adding more instances</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#deploying-a-ruby-on-rails-app">Deploying a Ruby on Rails app</a>
-                    <ul>
-                      <li><a href="#web-servers">Web servers</a></li>
-                      <li><a href="#troubleshooting-asset-precompilation">Troubleshooting asset precompilation</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#deploying-a-node-js-app">Deploying a Node.js app</a>
-                    <ul>
-                      <li><a href="#postgresql-setup-with-node-js">PostgreSQL setup with Node.js</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#deploying-a-django-app">Deploying a Django app</a>
-                    <ul>
-                      <li><a href="#postgresql-setup-with-django">PostgreSQL setup with Django</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#production-checklist">Production checklist</a></li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#deploying-backing-services">Deploying backing services</a>
-                <ul>
-                  <li><a href="#services-overview">Services overview</a></li>
-                  <li><a href="#paid-services">Paid services</a></li>
-                  <li><a href="#accessing-services">Accessing services</a></li>
-                  <li><a href="#future-services">Future services</a></li>
-                  <li>
-                    <a href="#using-a-postgresql-service">Using a PostgreSQL service</a>
-                    <ul>
-                      <li><a href="#creating-a-postgresql-service">Creating a PostgreSQL service</a></li>
-                      <li><a href="#accessing-postgresql-from-your-app">Accessing PostgreSQL from your app</a></li>
-                      <li><a href="#postgresql-service-maintenance-times">PostgreSQL service maintenance times</a></li>
-                      <li><a href="#postgresql-service-backup">PostgreSQL service backup</a></li>
-                      <li><a href="#high-availability-details">High availability details</a></li>
-                      <li><a href="#read-replicas">Read replicas</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <a href="#managing-apps">Managing apps</a>
-                <ul>
-                  <li>
-                    <a href="#scaling-apps">Scaling apps</a>
-                    <ul>
-                      <li><a href="#increasing-instances">Increasing instances</a></li>
-                      <li><a href="#increasing-memory-and-disk-space">Increasing memory and disk space</a></li>
-                      <li><a href="#more-about-scaling">More about scaling</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#quotas">Quotas</a>
-                    <ul>
-                      <li><a href="#quota-allocations">Quota allocations</a></li>
-                      <li><a href="#quota-limits">Quota limits</a></li>
-                      <li><a href="#application-quotas">Application quotas</a></li>
-                      <li><a href="#memory-share-and-compute-share">Memory share and compute share</a></li>
-                      <li><a href="#application-quota-sizing">Application quota sizing</a></li>
-                    </ul>
-                  </li>
-
-                  <li>
-                    <a href="#logging">Logging</a>
-                    <ul>
-                      <li><a href="#current-logs">Current logs</a></li>
-                      <li><a href="#cf-events-command">cf events command</a></li>
-                      <li><a href="#further-information">Further information</a></li>
-                    </ul>
-                  </li>
-
-                  <li><a href="#redirecting-all-traffic">Redirecting all traffic</a></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
+                <li>
+                  <a href="#deploying-backing-services">Deploying backing services</a>
+                  <ul>
+                    <li><a href="#services-overview">Services overview</a></li>
+                    <li><a href="#paid-services">Paid services</a></li>
+                    <li><a href="#accessing-services">Accessing services</a></li>
+                    <li><a href="#future-services">Future services</a></li>
+                    <li>
+                      <a href="#using-a-postgresql-service">Using a PostgreSQL service</a>
+                      <ul>
+                        <li><a href="#creating-a-postgresql-service">Creating a PostgreSQL service</a></li>
+                        <li><a href="#accessing-postgresql-from-your-app">Accessing PostgreSQL from your app</a></li>
+                        <li><a href="#postgresql-service-maintenance-times">PostgreSQL service maintenance times</a></li>
+                        <li><a href="#postgresql-service-backup">PostgreSQL service backup</a></li>
+                        <li><a href="#high-availability-details">High availability details</a></li>
+                        <li><a href="#read-replicas">Read replicas</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#managing-apps">Managing apps</a>
+                  <ul>
+                    <li>
+                      <a href="#scaling-apps">Scaling apps</a>
+                      <ul>
+                        <li><a href="#increasing-instances">Increasing instances</a></li>
+                        <li><a href="#increasing-memory-and-disk-space">Increasing memory and disk space</a></li>
+                        <li><a href="#more-about-scaling">More about scaling</a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#quotas">Quotas</a>
+                      <ul>
+                        <li><a href="#quota-allocations">Quota allocations</a></li>
+                        <li><a href="#quota-limits">Quota limits</a></li>
+                        <li><a href="#application-quotas">Application quotas</a></li>
+                        <li><a href="#memory-share-and-compute-share">Memory share and compute share</a></li>
+                        <li><a href="#application-quota-sizing">Application quota sizing</a></li>
+                      </ul>
+                    </li>
+                    
+                    <li>
+                      <a href="#logging">Logging</a>
+                      <ul>
+                        <li><a href="#current-logs">Current logs</a></li>
+                        <li><a href="#cf-events-command">cf events command</a></li>
+                        <li><a href="#further-information">Further information</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#redirecting-all-traffic">Redirecting all traffic</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
 
         <div class="app-pane__content">
@@ -165,5 +172,7 @@
         </div>
       </div>
     </div>
+
+    
   </body>
 </html>

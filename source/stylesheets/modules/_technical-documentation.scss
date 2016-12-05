@@ -1,4 +1,6 @@
 .technical-documentation {
+  // Required for IE11 to render <main> correctly
+  display: block;
   margin: 0 $gutter-half 10px;
   max-width: 40em;
 
