@@ -50,5 +50,5 @@ echo "OK!"
 
 bundle exec middleman build
 cp Staticfile.auth build
-cf target -s integration
-cf push paas-tech-docs-integration -b staticfile_buildpack -m 64M -p ./build
+cf target -o govuk-service-manual -s integration
+cf push
