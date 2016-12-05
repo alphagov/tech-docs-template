@@ -2,15 +2,11 @@
   'use strict';
 
   Modules.TableOfContents = function () {
-
-    var $html = $('html'),
-        $openLink,
-        $closeLink,
-        $tocList;
+    var $html = $('html');
 
     this.start = function ($element) {
-      $closeLink = $element.find('.js-toc-close');
-      $tocList = $element.find('.js-toc-list');
+      var $closeLink = $element.find('.js-toc-close');
+      var $tocList = $element.find('.js-toc-list');
 
       // Need delegated handler for show link as sticky polyfill recreates element
       $html.on('click.toc', '.js-toc-show', preventingScrolling(openNavigation));
