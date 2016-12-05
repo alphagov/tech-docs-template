@@ -1,0 +1,6 @@
+---
+applications:
+- name: paas-tech-docs-integration
+  memory: 64M
+  path: ./build
+  buildpack: staticfile_buildpack
