@@ -1,5 +1,7 @@
 @include screen {
   @include media(tablet) {
+    $toc-width: 330px;
+
     .flexbox {
 
       body {
@@ -37,12 +39,23 @@
 
       .app-pane__toc {
         flex: 0 0 auto;
-        width: 330px;
+        width: $toc-width;
         border-right: 1px solid $grey-2;
       }
 
       .app-pane__content {
         flex: 1 1 auto;
+      }
+    }
+
+    .no-flexbox {
+      .app-pane__toc {
+        float: left;
+        width: $toc-width;
+      }
+
+      .app-pane__content {
+        margin-left: $toc-width;
       }
     }
   }
