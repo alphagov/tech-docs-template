@@ -7,9 +7,9 @@ require 'lib/tech_docs_html_renderer'
 set :markdown_engine, :redcarpet
 set :markdown,
     renderer: TechDocsHTMLRenderer.new(
-      fenced_code_blocks: true,
       with_toc_data: true
-    )
+    ),
+    fenced_code_blocks: true
 
 # Per-page layout changes:
 #
