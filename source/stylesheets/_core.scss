@@ -1,6 +1,10 @@
 @charset "utf-8";
 
-@import "fonts";
+$tablet-breakpoint: 768px !default;
+$desktop-breakpoint: 992px !default;
+
+@import "utilities/fonts";
+@import "utilities/printable";
 
 @import "govuk_frontend_toolkit/colours";
 @import "govuk_frontend_toolkit/conditionals";
