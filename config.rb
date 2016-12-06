@@ -59,17 +59,5 @@ end
 # Tech Docs-specific configuration
 ###
 
-# Host to use for canonical URL generation (without trailing slash)
-config[:host] = 'https://paas-tech-docs-integration.cloudapps.digital'
-
-config[:tech_docs] = {
-  show_govuk_logo: true,
-  service_name: 'Platform as a Service',
-  phase: 'Beta',
-  header_links: {
-    'About' => 'https://www.cloud.service.gov.uk',
-    'Get Started' => 'https://www.cloud.service.gov.uk/get-started',
-    'Documentation' => '/',
-    'Support' => 'https://www.cloud.service.gov.uk/support'
-  }
-}
+config[:tech_docs] = YAML.load_file('config/tech-docs.yml')
+                         .with_indifferent_access
