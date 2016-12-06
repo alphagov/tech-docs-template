@@ -54,3 +54,10 @@ configure :build do
   # Minify Javascript on build
   # activate :minify_javascript
 end
+
+###
+# Tech Docs-specific configuration
+###
+
+# Host to use for canonical URL generation (without trailing slash)
+config[:host] = 'https://paas-tech-docs-integration.cloudapps.digital'

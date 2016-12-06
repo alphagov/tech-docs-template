@@ -11,6 +11,8 @@
     <!--[if gt IE 8]><!--><%= stylesheet_link_tag :screen, media: 'screen' %><!--<![endif]-->
     <!--[if lte IE 8]><%= stylesheet_link_tag 'screen-old-ie', media: 'screen' %><![endif]-->
 
+    <link rel="canonical" href="<%= config[:host] %><%= current_page.url %>">
+
     <%= stylesheet_link_tag :print, media: 'print' %>
 
     <%= javascript_include_tag :application %>
@@ -148,7 +150,7 @@
                         <li><a href="#application-quota-sizing">Application quota sizing</a></li>
                       </ul>
                     </li>
-                    
+
                     <li>
                       <a href="#logging">Logging</a>
                       <ul>
@@ -173,6 +175,6 @@
       </div>
     </div>
 
-    
+
   </body>
 </html>
