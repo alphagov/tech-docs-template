@@ -31,7 +31,7 @@ echo "OK!"
 
 # Check that we've not got any uncommitted files in our working directory
 echo "Checking dirty working tree..."
-DIRTY_WORKING_TREE=$(git status --porcelain 2>/dev/null | egrep "^(M| M)")
+DIRTY_WORKING_TREE=$(git status --porcelain 2>/dev/null | egrep "^(M| M)" || exit 0)
 if [[ $DIRTY_WORKING_TREE != "" ]]; then
   error "There are uncommitted changes in the working directory."
   error "Please commit or stash all changes and try again."
