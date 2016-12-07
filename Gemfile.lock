@@ -1,5 +1,6 @@
-PATH
-  remote: vendor/table_of_contents
+GIT
+  remote: git://github.com/alphagov/table_of_contents.git
+  revision: ee6d26c6ead059e60b212f10f906766ec89b25df
   specs:
     table_of_contents (0.1.0)
       nokogiri
