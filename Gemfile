@@ -18,6 +18,8 @@ gem 'middleman-syntax', '~> 3.0.0'
 
 gem 'redcarpet', '~> 3.3.2'
 
+gem 'table_of_contents', github: 'alphagov/table_of_contents'
+
 group :development, :test do
   gem 'jasmine'
 end
