@@ -15,6 +15,7 @@ $desktop-breakpoint: 992px !default;
 @import "govuk_frontend_toolkit/helpers";
 @import "govuk_frontend_toolkit/measurements";
 @import "govuk_frontend_toolkit/typography";
+@import "govuk_frontend_toolkit/with-scrollbars";
 
 @import "modules/anchored-heading";
 @import "modules/app-pane";
