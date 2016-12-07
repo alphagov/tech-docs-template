@@ -1,5 +1,3 @@
-<br><br>
-
 Government PaaS is a cloud-hosting platform being built by the Government Digital Service (GDS). PaaS manages the deployment of your apps, services and background tasks so you don’t need to hire specialist cloud skills to do so.
 
 <aside class="notice">

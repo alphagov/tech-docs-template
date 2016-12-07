@@ -17,7 +17,7 @@ These steps assume you have already carried out the setup process explained in t
 
 2. Add some markup to the `index.html` file:
 
-    ``` 
+    ```html
     <html>
       <head>
         <title>Static Site</title>
@@ -31,7 +31,7 @@ These steps assume you have already carried out the setup process explained in t
 3. Create a `manifest.yml` file in the same directory. The manifest file tells 
    Cloud Foundry what to do with your app.
 
-    ```
+    ```yaml
     ---
     applications:
     - name: my-static-site

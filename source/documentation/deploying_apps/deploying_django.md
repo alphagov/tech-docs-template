@@ -84,7 +84,7 @@ If you are just getting started learning CloudFoundry, you can use the sandbox s
 
 9. Create a `manifest.yml` file in the root of your local folder.
 
-    ```
+    ```yaml
     ---
     applications:
     - name: my-app
