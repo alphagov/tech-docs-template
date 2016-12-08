@@ -18,12 +18,12 @@
     text-decoration: none;
     text-indent: -9999em;
 
-    background-image: image-url('anchored-heading-icon.png');
+    background-image: file-url('anchored-heading-icon.png');
     background-repeat: no-repeat;
     background-position: left center;
 
     @include device-pixel-ratio {
-      background-image: image-url('anchored-heading-icon-2x.png');
+      background-image: file-url('anchored-heading-icon-2x.png');
       background-size: $icon-width $icon-height;
     }
 
