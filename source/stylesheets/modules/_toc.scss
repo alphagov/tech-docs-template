@@ -108,12 +108,16 @@
         }
       }
 
+      .toc__list {
+        margin-right: $gutter * 1.5;
+      }
+
       .toc__close {
         display: block;
-        position: fixed;
-        right: $gutter-half;
-        top: $gutter-half;
-        
+        position: sticky;
+        right: 0;
+        top: 0;
+
         width: 20px;
         height: 20px;
         float: right;
@@ -145,7 +149,6 @@
         
         .toc {
           display: block;
-          padding-right: $gutter * 2;
           position: fixed;
           top: 0;
           bottom: 0;
