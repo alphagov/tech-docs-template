@@ -4,6 +4,8 @@ require 'lib/tech_docs_html_renderer'
 # Page options, layouts, aliases and proxies
 ###
 
+layout 'tech_docs_layout'
+
 set :markdown_engine, :redcarpet
 set :markdown,
     renderer: TechDocsHTMLRenderer.new(
