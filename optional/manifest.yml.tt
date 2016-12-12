@@ -1,6 +1,6 @@
 ---
 applications:
-- name: paas-tech-docs-integration
+- name: <%= @application_name %>
   memory: 64M
   path: ./build
   buildpack: staticfile_buildpack
