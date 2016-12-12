@@ -32,7 +32,11 @@ In order to configure things like the header, edit `config/tech-docs.yml`.
 
 ## Updating a project to use the latest template
 
-From your project folder, run `middleman init . -T alphagov/tech-docs-template`.
+From your project folder, run:
+
+```
+middleman init . -T alphagov/tech-docs-template
+```
 
 When asked 'Are you creating a completely new documentation project?', be sure
 to answer **no** to avoid having the default 'demo' documentation and config
