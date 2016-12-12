@@ -3,6 +3,8 @@
 The Tech Docs Template is a [middleman][mm] [template][mmt] that
 you can use to build technical documentation using a GOV.UK style.
 
+![Screenshot of Example Documentation](/screenshots/composite.png)
+
 ## Creating a new documentation project
 
 From the command line run the following commands, substituting `my-new-project`
