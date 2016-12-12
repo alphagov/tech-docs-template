@@ -9,7 +9,8 @@ set :markdown,
     renderer: TechDocsHTMLRenderer.new(
       with_toc_data: true
     ),
-    fenced_code_blocks: true
+    fenced_code_blocks: true,
+    tables: true
 
 # Per-page layout changes:
 #
