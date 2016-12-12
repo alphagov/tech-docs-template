@@ -3,7 +3,7 @@
 
     @include core-16;
     padding: $gutter-half;
-    
+
     ul {
       list-style: none;
       padding: 0;
@@ -27,10 +27,17 @@
       a:link, a:visited {
         display: block;
         padding: 8px 0;
+        letter-spacing: 0.03em;
+
+        &.toc-link--in-view {
+          font-weight: bold;
+          letter-spacing: normal;
+        }
       }
 
-      > ul > li > a {
+      > ul > li > a:link {
         @include bold-19;
+        letter-spacing: normal;
       }
 
       // Second Level
@@ -59,7 +66,7 @@
     .js {
       .toc {
         display: none;
-        
+
         // Hide third level nav and below on mobile
         li li li {
           display: none;
@@ -73,14 +80,14 @@
         box-sizing: border-box;
         width: 100%;
         z-index: 10;
-        
+
         &__label {
           display: block;
           position: relative;
           z-index: 10;
-          
+
           padding: $gutter-half $gutter-half 10px;
-          
+
           background: $grey-4;
           @supports(backdrop-filter: blur(2px)) {
             background: transparentize($grey-4, 0.05);
@@ -91,12 +98,12 @@
           color: $text-colour;
           text-decoration: none;
         }
-        
+
         &__icon {
           width: 20px;
           height: 20px;
           float: right;
-          
+
           background-image: file-url('govuk-icn-numbered-list.png');
           background-repeat: no-repeat;
           background-position: left center;
@@ -121,9 +128,9 @@
         width: 20px;
         height: 20px;
         float: right;
-        
+
         text-indent: -10000px;
-        
+
         background-image: file-url('govuk-icn-close.png');
         background-repeat: no-repeat;
         background-position: left center;
@@ -146,7 +153,7 @@
         .toc-show {
           visibility: hidden;
         }
-        
+
         .toc {
           display: block;
           position: fixed;
@@ -155,7 +162,7 @@
           left: 0;
           right: 0;
           z-index: 10;
-          
+
           overflow: auto;
           -webkit-overflow-scrolling: touch;
           -ms-overflow-style: none;
@@ -174,7 +181,7 @@
 
         h1, h2, h3, h4, h5, h6 {
           // Line height + padding + border of .toc-show
-          
+
           padding-top: $gutter-half + $offset;
           margin-top: -$offset;
         }
