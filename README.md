@@ -1,3 +1,5 @@
+# Tech Docs Template
+
 The Tech Docs Template is a [middleman][mm] [template][mmt] that
 you can use to build technical documentation using a GOV.UK style.
 
