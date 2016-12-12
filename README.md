@@ -1,0 +1,62 @@
+# Tech Docs Template
+
+The Tech Docs Template is a [middleman][mm] [template][mmt] that
+you can use to build technical documentation using a GOV.UK style.
+
+## Creating a new documentation project
+
+From the command line run the following commands, substituting `my-new-project`
+for the name of your new project:
+
+```bash
+mkdir my-new-project
+cd my-new-project
+middleman init . -T alphagov/tech-docs-template
+```
+
+This will run an interactive prompt where you can set basic configuration for
+your project.
+
+Once your project has been created, avoid editing any of the following:
+
+- `source/images/*`
+- `source/javascripts/*`
+- `source/layouts/*`
+- `source/stylesheets/*`
+- `source/favicon.ico`
+
+as this will make it a lot harder to stay up to date with any changes made
+to the template.
+
+In order to configure things like the header, edit `config/tech-docs.yml`.
+
+## Updating a project to use the latest template
+
+From your project folder, run `middleman init . -T alphagov/tech-docs-template`.
+
+When asked 'Are you creating a completely new documentation project?', be sure
+to answer **no** to avoid having the default 'demo' documentation and config
+being created.
+
+If you have made any changes to the layout or any of the assets you will be
+prompted to resolve any conflicts, at which point you can view a diff between
+your version and the latest version.
+
+## Tests
+
+We have some automated JavaScript tests that use [Jasmine][jas] as a test
+framework.
+
+To run the tests on your machine:
+
+- Run `bundle exec rake jasmine`
+- Navigate to `http://localhost:8888` in a browser of your choosing
+- Peruse the output of your tests
+
+Or, on the command line, run `bundle exec rake jasmine:ci`.
+
+
+
+[mm]: https://middlemanapp.com/
+[mmt]: https://middlemanapp.com/advanced/project_templates/
+[jas]: https://jasmine.github.io/

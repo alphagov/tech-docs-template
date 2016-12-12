@@ -60,6 +60,7 @@ module Middleman
       return unless @first_time
 
       directory 'optional/source', 'source'
+      copy_file 'optional/README.md', 'README.md'
     end
   end
 end
