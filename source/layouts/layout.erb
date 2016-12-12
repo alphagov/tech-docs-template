@@ -26,7 +26,11 @@
         <header class="header header--full-width">
           <div class="header__container">
             <div class="header__brand">
-              <a href="/">
+              <% if config[:tech_docs][:service_link] %>
+                <a href="<%= config[:tech_docs][:service_link] %>">
+              <% else %>
+                <span>
+              <% end %>
                 <% if config[:tech_docs][:show_govuk_logo] %>
                   <span class="govuk-logo">
                     <img class="govuk-logo__printable-crown" src="/images/gov.uk_logotype_crown_invert_trans.png" height="32" width="36">
@@ -39,7 +43,11 @@
                     <span class="phase-banner"><%= config[:tech_docs][:phase] %></span>
                   <% end %>
                 </span>
-              </a>
+              <% if config[:tech_docs][:service_link] %>
+                </a>
+              <% else %>
+                </span>
+              <% end %>
             </div>
 
             <input class="header__navigation-toggle-checkbox" type="checkbox" id="show-menu" />
