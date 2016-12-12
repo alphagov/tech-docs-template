@@ -11,8 +11,8 @@
 #   - 'dist/**/*.js'
 #
 src_files:
-  - source/javascripts/vendor/jquery.js
-  - source/javascripts/**/*.js
+  - template/source/javascripts/vendor/jquery.js
+  - template/source/javascripts/**/*.js
 
 # stylesheets
 #
@@ -26,7 +26,7 @@ src_files:
 #   - 'stylesheets/*.css'
 #
 stylesheets:
-  - source/stylesheets/**/*.css
+  - template/source/stylesheets/**/*.css
 
 # helpers
 #
