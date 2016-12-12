@@ -22,9 +22,9 @@ module Middleman
       return unless @use_paas
 
       @application_name = ask(
-        <<~MESSAGE
-          What is the name of your application on PaaS?
-          If your application URL is larry-the-cat.cloudapps.digital, this will be "larry-the-cat".
+        <<-MESSAGE
+What is the name of your application on PaaS?
+If your application URL is larry-the-cat.cloudapps.digital, this will be "larry-the-cat".
         MESSAGE
       )
     end
@@ -33,9 +33,9 @@ module Middleman
       return unless @first_time
 
       @canonical_host = ask(
-        <<~MESSAGE
-          What is the canonical hostname of your application?
-          e.g. docs.larry-the-cat.service.gov.uk
+        <<-MESSAGE
+What is the canonical hostname of your application?
+e.g. docs.larry-the-cat.service.gov.uk
         MESSAGE
       )
     end
