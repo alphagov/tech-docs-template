@@ -27,10 +27,17 @@
       a:link, a:visited {
         display: block;
         padding: 8px 0;
+        letter-spacing: 0.03em;
+
+        &.toc-link--in-view {
+          font-weight: bold;
+          letter-spacing: normal;
+        }
       }
 
-      > ul > li > a {
+      > ul > li > a:link {
         @include bold-19;
+        letter-spacing: normal;
       }
 
       // Second Level
@@ -194,14 +201,5 @@
 @include print {
   .toc {
     display: none;
-  }
-}
-
-.toc-link {
-  letter-spacing: 0.03em;
-
-  &--in-view {
-    font-weight: bold;
-    letter-spacing: normal;
   }
 }
