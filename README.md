@@ -5,6 +5,10 @@ you can use to build technical documentation using a GOV.UK style.
 
 ![Screenshot of Example Documentation](/screenshots/composite.png)
 
+## Prerequisites
+
+- You'll need [middleman][mm] installed, and its dependencies (Ruby). If you have Ruby v2.2.2 or newer installed you _should_ just be able to run `gem install middleman`. Installing or updating Ruby is outside the scope of this README.
+
 ## Creating a new documentation project
 
 From the command line run the following commands, substituting `my-new-project`
