@@ -13,3 +13,6 @@ header_links:
   Get Started: https://www.larry-the-cat.service.gov.uk/get-started
   Documentation: /
   Support: https://www.larry-the-cat.service.gov.uk/support
+
+# Tracking ID from Google Analytics
+ga_tracking_id: UA-XXXXX-Y
