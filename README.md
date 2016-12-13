@@ -13,7 +13,7 @@ for the name of your new project:
 ```bash
 mkdir my-new-project
 cd my-new-project
-middleman init . -T alphagov/tech-docs-template
+FIRST_TIME=true middleman init . -T alphagov/tech-docs-template
 ```
 
 This will run an interactive prompt where you can set basic configuration for
@@ -37,12 +37,8 @@ In order to configure things like the header, edit `config/tech-docs.yml`.
 From your project folder, run:
 
 ```
-middleman init . -T alphagov/tech-docs-template
+FIRST_TIME=false middleman init . -T alphagov/tech-docs-template
 ```
-
-When asked 'Are you creating a completely new documentation project?', be sure
-to answer **no** to avoid having the default 'demo' documentation and config
-being created.
 
 If you have made any changes to the layout or any of the assets you will be
 prompted to resolve any conflicts, at which point you can view a diff between
