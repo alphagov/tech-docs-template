@@ -14,5 +14,5 @@ header_links:
   Documentation: /
   Support: https://www.larry-the-cat.service.gov.uk/support
 
-# Tracking ID from Google Analytics
-ga_tracking_id: UA-XXXXX-Y
+# Tracking ID from Google Analytics (e.g. UA-XXXX-Y)
+ga_tracking_id:
