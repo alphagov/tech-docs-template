@@ -7,7 +7,11 @@ module Middleman
     source_root File.expand_path(File.dirname(__FILE__))
 
     def detect_if_first_time_install
-      @first_time = yes?('Are you creating a completely new documentation project?')
+      if option_set?('FIRST_TIME')
+        @first_time = parse_boolean('FIRST_TIME')
+      else
+        @first_time = yes?('Are you creating a completely new documentation project?')
+      end
     end
 
     def copy_template_files
@@ -17,11 +21,15 @@ module Middleman
     def ask_about_paas
       return unless @first_time
 
-      @use_paas = yes?('Will you be deploying this on Government PaaS?')
+      if option_set?('USE_PAAS')
+        @use_paas = parse_boolean('USE_PAAS')
+      else
+        @use_paas = yes?('Will you be deploying this on Government PaaS?')
+      end
 
       return unless @use_paas
 
-      @application_name = ask(
+      @application_name = ENV['APPLICATION_NAME'] || ask(
         <<-MESSAGE
 What is the name of your application on PaaS?
 If your application URL is larry-the-cat.cloudapps.digital, this will be "larry-the-cat".
@@ -32,7 +40,7 @@ If your application URL is larry-the-cat.cloudapps.digital, this will be "larry-
     def ask_about_canonical_host
       return unless @first_time
 
-      @canonical_host = ask(
+      @canonical_host = ENV['CANONICAL_HOST'] || ask(
         <<-MESSAGE
 What is the canonical hostname of your application?
 e.g. docs.larry-the-cat.service.gov.uk
@@ -61,6 +69,16 @@ e.g. docs.larry-the-cat.service.gov.uk
 
       directory 'optional/source', 'source'
       copy_file 'optional/README.md', 'README.md'
+    end
+
+  private
+
+    def option_set?(key)
+      ENV.key?(key)
+    end
+
+    def parse_boolean(key)
+      ENV[key] == 'true'
     end
   end
 end
