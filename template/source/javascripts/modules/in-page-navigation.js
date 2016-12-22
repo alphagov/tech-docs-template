@@ -1,7 +1,7 @@
 (function($, Modules) {
   'use strict';
 
-  Modules.HighlightedNav = function HighlightedNav() {
+  Modules.InPageNavigation = function InPageNavigation() {
     var $tocPane;
     var $contentPane;
     var $tocItems;
