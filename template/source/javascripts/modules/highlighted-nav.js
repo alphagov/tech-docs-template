@@ -4,31 +4,66 @@
   Modules.HighlightedNav = function HighlightedNav() {
     var $tocPane;
     var $contentPane;
+    var $tocItems;
+
+    var animationFrameRequested = false;
 
     this.start = function start($element) {
-      $tocPane = $element.find('.app-pane__toc');
-      $contentPane = $element.find('.app-pane__content');
-      $contentPane.on('scroll', handleScroll);
-      handleScroll();
-    };
-
-    function handleScroll() {
-      var $anchors = $tocPane.find('a');
-      var inView = firstElementInView($anchors);
-
-      $anchors.removeClass('toc-link--in-view');
-
-      if (!inView) {
+      if (!Modernizr.history) {
         return;
       }
 
-      inView.addClass('toc-link--in-view')
+      $tocPane = $element.find('.app-pane__toc');
+      $contentPane = $element.find('.app-pane__content');
+      $tocItems = $tocPane.find('a');
+
+      $contentPane.on('scroll', function () {
+        withAnimationFrame(handleScrollEvent);
+      });
+
+      // Popstate is triggered when using the back button to navigate 'within'
+      // the page, i.e. changing the anchor part of the URL.
+      $(window).on('popstate', function (event) {
+        restoreScrollPosition(event.originalEvent.state);
+      });
+
+      // Restore state when e.g. using the back button to return to this page
+      restoreScrollPosition(history.state);
+    };
+
+    function restoreScrollPosition(state) {
+      if (state && state.scrollTop) {
+        $contentPane.scrollTop(history.state.scrollTop);
+      }
     }
 
-    function firstElementInView($anchors) {
+    function handleScrollEvent() {
+      var activeTocItem = tocItemForFirstElementInView();
+
+      storeCurrentPositionInHistoryApi(activeTocItem);
+      highlightActiveItemInToc(activeTocItem);
+    }
+
+    function storeCurrentPositionInHistoryApi(activeTocItem) {
+      history.replaceState(
+        { scrollTop: $contentPane.scrollTop() },
+        "",
+        activeTocItem.attr('href')
+      );
+    }
+
+    function highlightActiveItemInToc(activeTocItem) {
+      $tocItems.removeClass('toc-link--in-view');
+
+      if (activeTocItem) {
+        activeTocItem.addClass('toc-link--in-view');
+      }
+    }
+
+    function tocItemForFirstElementInView() {
       var target = null;
 
-      $($anchors.get().reverse()).each(function checkIfInView(index) {
+      $($tocItems.get().reverse()).each(function checkIfInView(index) {
         if (target) {
           return;
         }
@@ -42,6 +77,17 @@
       });
 
       return target;
+    }
+
+    function withAnimationFrame(callback) {
+      if (!animationFrameRequested) {
+        requestAnimationFrame(function () {
+          animationFrameRequested = false;
+          callback();
+        });
+      }
+
+      animationFrameRequested = true;
     }
   };
 })(jQuery, window.GOVUK.Modules);
