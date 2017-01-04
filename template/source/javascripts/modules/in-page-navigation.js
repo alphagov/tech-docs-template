@@ -6,16 +6,12 @@
     var $contentPane;
     var $tocItems;
 
-    var animationFrameRequested = false;
-
     this.start = function start($element) {
       $tocPane = $element.find('.app-pane__toc');
       $contentPane = $element.find('.app-pane__content');
       $tocItems = $tocPane.find('a');
 
-      $contentPane.on('scroll', function () {
-        withAnimationFrame(handleScrollEvent);
-      });
+      $contentPane.on('scroll', _.debounce(handleScrollEvent, 250, { maxWait: 250 }));
 
       // Popstate is triggered when using the back button to navigate 'within'
       // the page, i.e. changing the anchor part of the URL.
@@ -77,17 +73,6 @@
       });
 
       return target;
-    }
-
-    function withAnimationFrame(callback) {
-      if (!animationFrameRequested) {
-        requestAnimationFrame(function () {
-          animationFrameRequested = false;
-          callback();
-        });
-      }
-
-      animationFrameRequested = true;
     }
   };
 })(jQuery, window.GOVUK.Modules);
