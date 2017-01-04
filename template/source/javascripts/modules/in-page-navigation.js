@@ -9,10 +9,6 @@
     var animationFrameRequested = false;
 
     this.start = function start($element) {
-      if (!Modernizr.history) {
-        return;
-      }
-
       $tocPane = $element.find('.app-pane__toc');
       $contentPane = $element.find('.app-pane__content');
       $tocItems = $tocPane.find('a');
@@ -28,7 +24,9 @@
       });
 
       // Restore state when e.g. using the back button to return to this page
-      restoreScrollPosition(history.state);
+      if (Modernizr.history) {
+        restoreScrollPosition(history.state);
+      }
     };
 
     function restoreScrollPosition(state) {
@@ -45,11 +43,13 @@
     }
 
     function storeCurrentPositionInHistoryApi($activeTocItem) {
-      history.replaceState(
-        { scrollTop: $contentPane.scrollTop() },
-        "",
-        $activeTocItem.attr('href')
-      );
+      if (Modernizr.history) {
+        history.replaceState(
+          { scrollTop: $contentPane.scrollTop() },
+          "",
+          $activeTocItem.attr('href')
+        );
+      }
     }
 
     function highlightActiveItemInToc($activeTocItem) {
