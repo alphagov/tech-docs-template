@@ -38,25 +38,25 @@
     }
 
     function handleScrollEvent() {
-      var activeTocItem = tocItemForFirstElementInView();
+      var $activeTocItem = tocItemForFirstElementInView();
 
-      storeCurrentPositionInHistoryApi(activeTocItem);
-      highlightActiveItemInToc(activeTocItem);
+      storeCurrentPositionInHistoryApi($activeTocItem);
+      highlightActiveItemInToc($activeTocItem);
     }
 
-    function storeCurrentPositionInHistoryApi(activeTocItem) {
+    function storeCurrentPositionInHistoryApi($activeTocItem) {
       history.replaceState(
         { scrollTop: $contentPane.scrollTop() },
         "",
-        activeTocItem.attr('href')
+        $activeTocItem.attr('href')
       );
     }
 
-    function highlightActiveItemInToc(activeTocItem) {
+    function highlightActiveItemInToc($activeTocItem) {
       $tocItems.removeClass('toc-link--in-view');
 
-      if (activeTocItem) {
-        activeTocItem.addClass('toc-link--in-view');
+      if ($activeTocItem) {
+        $activeTocItem.addClass('toc-link--in-view');
       }
     }
 
