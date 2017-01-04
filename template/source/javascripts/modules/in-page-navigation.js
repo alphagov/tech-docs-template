@@ -33,7 +33,7 @@
 
     function restoreScrollPosition(state) {
       if (state && state.scrollTop) {
-        $contentPane.scrollTop(history.state.scrollTop);
+        $contentPane.scrollTop(state.scrollTop);
       }
     }
 
