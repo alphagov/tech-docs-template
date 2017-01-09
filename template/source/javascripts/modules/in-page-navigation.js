@@ -13,14 +13,14 @@
 
       $contentPane.on('scroll', _.debounce(handleScrollEvent, 250, { maxWait: 250 }));
 
-      // Popstate is triggered when using the back button to navigate 'within'
-      // the page, i.e. changing the anchor part of the URL.
-      $(window).on('popstate', function (event) {
-        restoreScrollPosition(event.originalEvent.state);
-      });
-
-      // Restore state when e.g. using the back button to return to this page
       if (Modernizr.history) {
+        // Popstate is triggered when using the back button to navigate 'within'
+        // the page, i.e. changing the anchor part of the URL.
+        $(window).on('popstate', function (event) {
+          restoreScrollPosition(event.originalEvent.state);
+        });
+
+        // Restore state when e.g. using the back button to return to this page
         restoreScrollPosition(history.state);
       }
     };
@@ -28,6 +28,8 @@
     function restoreScrollPosition(state) {
       if (state && state.scrollTop) {
         $contentPane.scrollTop(state.scrollTop);
+      } else {
+        $contentPane.scrollTop(0);
       }
     }
 
