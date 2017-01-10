@@ -20,16 +20,20 @@
           restoreScrollPosition(event.originalEvent.state);
         });
 
-        // Restore state when e.g. using the back button to return to this page
-        restoreScrollPosition(history.state);
+        if (history.state && history.state.scrollTop) {
+          // Restore existing state when e.g. using the back button to return to
+          // this page
+          restoreScrollPosition(history.state);
+        } else {
+          // Store initial position so we can restore it when using back button
+          handleScrollEvent();
+        }
       }
     };
 
     function restoreScrollPosition(state) {
-      if (state && state.scrollTop) {
+      if (state && typeof state.scrollTop !== 'undefined') {
         $contentPane.scrollTop(state.scrollTop);
-      } else {
-        $contentPane.scrollTop(0);
       }
     }
 
