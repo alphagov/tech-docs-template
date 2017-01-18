@@ -1,5 +1,11 @@
+require 'singleton'
+
 class UniqueIdentifierGenerator
+  include Singleton
+
   Anchor = Struct.new(:id, :level)
+
+  attr_reader :anchors
 
   def initialize
     @anchors = []
@@ -21,8 +27,14 @@ class UniqueIdentifierGenerator
     anchor
   end
 
+  def reset
+    @anchors = []
+  end
+
+private
+
   def prefixed_by_parent(anchor, level)
-    closest_parent = @anchors.reverse.find {|a| a.level < level }
+    closest_parent = @anchors.reverse.find { |a| a.level < level }
     if closest_parent.nil?
       anchor
     else

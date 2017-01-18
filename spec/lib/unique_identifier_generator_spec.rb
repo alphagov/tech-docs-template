@@ -1,6 +1,9 @@
 require 'unique_identifier_generator'
 
 RSpec.describe UniqueIdentifierGenerator do
+  subject { described_class.instance }
+  before { subject.reset }
+
   describe '#create' do
     it 'lower-cases the text' do
       expect(subject.create('Heading', 1)).to eq "heading"
@@ -63,6 +66,15 @@ RSpec.describe UniqueIdentifierGenerator do
           expect(second_heading).to eq "the-same-heading-2"
         end
       end
+    end
+  end
+
+  describe '#reset' do
+    it 'clears the list of existing anchors' do
+      subject.create('An Anchor', 1)
+      expect(subject.anchors).to_not be_empty
+      subject.reset
+      expect(subject.anchors).to be_empty
     end
   end
 end
