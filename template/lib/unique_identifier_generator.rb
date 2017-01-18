@@ -8,7 +8,7 @@ class UniqueIdentifierGenerator
   attr_reader :anchors
 
   def initialize
-    @anchors = []
+    reset
   end
 
   def create(id, level)
