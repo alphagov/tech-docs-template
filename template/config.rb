@@ -1,3 +1,5 @@
+require 'lib/unique_identifier_generator'
+require 'lib/unique_identifier_extension'
 require 'lib/tech_docs_html_renderer'
 
 ###
@@ -61,3 +63,5 @@ end
 
 config[:tech_docs] = YAML.load_file('config/tech-docs.yml')
                          .with_indifferent_access
+
+activate :unique_identifier
