@@ -11,7 +11,7 @@
       $contentPane = $element.find('.app-pane__content');
       $tocItems = $tocPane.find('a');
 
-      $contentPane.on('scroll', _.debounce(handleScrollEvent, 250, { maxWait: 250 }));
+      $contentPane.on('scroll', _.debounce(handleScrollEvent, 100, { maxWait: 100 }));
 
       if (Modernizr.history) {
         // Popstate is triggered when using the back button to navigate 'within'
@@ -59,7 +59,28 @@
 
       if ($activeTocItem) {
         $activeTocItem.addClass('toc-link--in-view');
+        scrollTocToActiveItem($activeTocItem);
       }
+    }
+
+    function scrollTocToActiveItem($activeTocItem) {
+      var paneHeight = $tocPane.height();
+      var linkTop = $activeTocItem.position().top;
+      var linkBottom = linkTop + $activeTocItem.outerHeight();
+
+      var offset = null;
+
+      if (linkTop < 0) {
+        offset = linkTop;
+      } else if (linkBottom >= paneHeight) {
+        offset = -(paneHeight - linkBottom);
+      } else {
+        return;
+      }
+
+      var newScrollTop = $tocPane.scrollTop() + offset;
+
+      $tocPane.scrollTop(newScrollTop);
     }
 
     function tocItemForFirstElementInView() {
