@@ -25,8 +25,9 @@
           // this page
           restoreScrollPosition(history.state);
         } else {
-          // Store initial position so we can restore it when using back button
-          handleScrollEvent();
+          // Store the initial position so that we can restore it even if we
+          // never scroll.
+          handleInitialLoadEvent();
         }
       }
     };
@@ -37,15 +38,27 @@
       }
     }
 
-    function handleScrollEvent() {
-      var $activeTocItem = tocItemForFirstElementInView();
+    function handleInitialLoadEvent() {
+      var $activeTocItem = tocItemForTargetElement();
 
+      if ($activeTocItem.length == 0) {
+        $activeTocItem = tocItemForFirstElementInView();
+      }
+
+      handleChangeInActiveItem($activeTocItem);
+    }
+
+    function handleScrollEvent() {
+      handleChangeInActiveItem(tocItemForFirstElementInView());
+    }
+
+    function handleChangeInActiveItem($activeTocItem) {
       storeCurrentPositionInHistoryApi($activeTocItem);
       highlightActiveItemInToc($activeTocItem);
     }
 
     function storeCurrentPositionInHistoryApi($activeTocItem) {
-      if (Modernizr.history && $activeTocItem) {
+      if (Modernizr.history && $activeTocItem && $activeTocItem.length == 1) {
         history.replaceState(
           { scrollTop: $contentPane.scrollTop() },
           "",
@@ -81,6 +94,17 @@
       var newScrollTop = $tocPane.scrollTop() + offset;
 
       $tocPane.scrollTop(newScrollTop);
+    }
+
+    function tocItemForTargetElement() {
+      var target = window.location.hash
+      var $targetElement = $(target);
+
+      if ($targetElement) {
+        return $tocItems.filter(function (elem) {
+          return ($(this).attr('href') == target);
+        }).first();
+      }
     }
 
     function tocItemForFirstElementInView() {
