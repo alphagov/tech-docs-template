@@ -62,6 +62,12 @@
     .toc {
       padding: $gutter-half $gutter;
     }
+
+    // Prevent the fixedsticky spacer from appearing if the browser is resized
+    // from mobile to desktop.
+    .fixedsticky-on + .fixedsticky-dummy {
+      display: none !important;
+    }
   }
 
   @include media(mobile) {
