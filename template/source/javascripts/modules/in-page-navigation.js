@@ -9,7 +9,7 @@
     this.start = function start($element) {
       $tocPane = $element.find('.app-pane__toc');
       $contentPane = $element.find('.app-pane__content');
-      $tocItems = $tocPane.find('a');
+      $tocItems = $('.js-toc-list').find('a');
 
       $contentPane.on('scroll', _.debounce(handleScrollEvent, 250, { maxWait: 250 }));
 
@@ -45,7 +45,7 @@
     }
 
     function storeCurrentPositionInHistoryApi($activeTocItem) {
-      if (Modernizr.history) {
+      if (Modernizr.history && $activeTocItem) {
         history.replaceState(
           { scrollTop: $contentPane.scrollTop() },
           "",
