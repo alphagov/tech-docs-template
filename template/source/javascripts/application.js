@@ -3,6 +3,7 @@
 //= require vendor/fixedsticky
 //= require vendor/lodash
 //= require analytics
+//= require header
 //= require start-modules
 
 $(function() {
