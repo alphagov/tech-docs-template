@@ -49,22 +49,21 @@
             </div>
 
             <% if config[:tech_docs][:header_links] %>
-              <input class="header__navigation-toggle-checkbox" type="checkbox" id="show-menu" aria-controls="navigation" aria-expanded="false" />
-              <label class="header__navigation-toggle" for="show-menu">
-                Menu
-              </label>
+              <div data-module="navigation">
+                <button type="button" class="header__navigation-toggle js-nav-toggle" aria-controls="navigation" aria-label="Show or hide top level navigation">Menu</button>
 
-              <nav id="navigation" class="header__navigation" aria-label="Top Level Navigation" aria-hidden="true">
-                <ul>
-                  <% config[:tech_docs][:header_links].each do |title, url| %>
-                    <li<% if url == current_page.url %> class="active"<% end %>>
-                      <a href="<%= url %>">
-                        <%= title %>
-                      </a>
-                    </li>
-                  <% end %>
-                </ul>
-              </nav>
+                <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
+                  <ul>
+                    <% config[:tech_docs][:header_links].each do |title, url| %>
+                      <li<% if url == current_page.url %> class="active"<% end %>>
+                        <a href="<%= url %>">
+                          <%= title %>
+                        </a>
+                      </li>
+                    <% end %>
+                  </ul>
+                </nav>
+              </div>
             <% end %>
           </div>
         </header>
