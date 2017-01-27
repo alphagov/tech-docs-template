@@ -25,6 +25,14 @@
       $openLink.on('click.toc', preventingScrolling(openNavigation));
       $closeLink.on('click.toc', preventingScrolling(closeNavigation));
       $tocList.on('click.toc', 'a', closeNavigation);
+
+      $(document).on('keydown.toc', function (event) {
+        var ESC_KEY = 27;
+
+        if (event.keyCode == ESC_KEY) {
+          closeNavigation();
+        }
+      });
     };
 
     function fixRubberBandingInIOS() {
