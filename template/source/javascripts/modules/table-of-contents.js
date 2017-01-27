@@ -3,18 +3,26 @@
 
   Modules.TableOfContents = function () {
     var $html = $('html');
+
     var $toc;
+    var $tocList;
+
+    var $openLink;
+    var $closeLink;
 
     this.start = function ($element) {
-      var $closeLink = $element.find('.js-toc-close');
-      var $tocList = $element.find('.js-toc-list');
-
       $toc = $element;
+      $tocList = $toc.find('.js-toc-list');
+
+      // Open link is not inside the module
+      $openLink = $html.find('.js-toc-show');
+      $closeLink = $toc.find('.js-toc-close');
 
       fixRubberBandingInIOS();
+      setAriaAttributes(false);
 
       // Need delegated handler for show link as sticky polyfill recreates element
-      $html.on('click.toc', '.js-toc-show', preventingScrolling(openNavigation));
+      $openLink.on('click.toc', preventingScrolling(openNavigation));
       $closeLink.on('click.toc', preventingScrolling(closeNavigation));
       $tocList.on('click.toc', 'a', closeNavigation);
     };
@@ -42,10 +50,33 @@
 
     function openNavigation() {
       $html.addClass('toc-open');
+      
+      toggleBackgroundVisiblity(false);
+      setAriaAttributes(true);
+
+      focusFirstLinkInToc();
     }
 
     function closeNavigation() {
       $html.removeClass('toc-open');
+
+      toggleBackgroundVisiblity(true);
+      setAriaAttributes(false);
+    }
+
+    function focusFirstLinkInToc() {
+      $('a', $tocList).first().focus();
+    }
+
+    function toggleBackgroundVisiblity(visibility) {
+      $('.toc-open-disabled').attr('aria-hidden', visibility ? '' : 'true');
+    }
+
+    function setAriaAttributes(tocIsVisible) {
+      $($openLink).add($closeLink)
+        .attr('aria-expanded', tocIsVisible ? 'true' : 'false');
+
+      $toc.attr('aria-hidden', tocIsVisible ? 'false' : 'true');
     }
 
     function preventingScrolling(callback) {
