@@ -19,12 +19,16 @@
       $closeLink = $toc.find('.js-toc-close');
 
       fixRubberBandingInIOS();
-      setAriaAttributes(false);
+      updateAriaAttributes();
 
       // Need delegated handler for show link as sticky polyfill recreates element
       $openLink.on('click.toc', preventingScrolling(openNavigation));
       $closeLink.on('click.toc', preventingScrolling(closeNavigation));
       $tocList.on('click.toc', 'a', closeNavigation);
+
+      // Allow aria hidden to be updated when resizing from mobile to desktop or
+      // vice versa
+      $(window).on('resize.toc', updateAriaAttributes)
 
       $(document).on('keydown.toc', function (event) {
         var ESC_KEY = 27;
@@ -60,7 +64,7 @@
       $html.addClass('toc-open');
       
       toggleBackgroundVisiblity(false);
-      setAriaAttributes(true);
+      updateAriaAttributes();
 
       focusFirstLinkInToc();
     }
@@ -69,7 +73,7 @@
       $html.removeClass('toc-open');
 
       toggleBackgroundVisiblity(true);
-      setAriaAttributes(false);
+      updateAriaAttributes();
     }
 
     function focusFirstLinkInToc() {
@@ -80,7 +84,9 @@
       $('.toc-open-disabled').attr('aria-hidden', visibility ? '' : 'true');
     }
 
-    function setAriaAttributes(tocIsVisible) {
+    function updateAriaAttributes() {
+      var tocIsVisible = $toc.is(':visible');
+
       $($openLink).add($closeLink)
         .attr('aria-expanded', tocIsVisible ? 'true' : 'false');
 
