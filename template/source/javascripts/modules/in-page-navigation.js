@@ -113,7 +113,7 @@
 
         var $this = $(this);
 
-        if ($this.position().top <= 0) {
+        if (Math.floor($this.position().top) <= 0) {
           result = $this;
         }
       });
