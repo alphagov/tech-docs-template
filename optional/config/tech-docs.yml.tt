@@ -21,3 +21,6 @@ ga_tracking_id:
 # If your ToC is too long, reduce this number and we'll only show higher-level
 # headings.
 max_toc_heading_level: 6
+
+# Prevent robots from indexing (e.g. whilst in development)
+prevent_indexing: false
