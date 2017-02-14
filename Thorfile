@@ -1,3 +1,7 @@
+require 'yaml'
+require 'fileutils'
+require 'tmpdir'
+require 'digest'
 require 'thor/group'
 
 module Middleman
@@ -11,11 +15,40 @@ module Middleman
 
     source_root __dir__
 
+
     def detect_if_first_time_install
-      if option_set?('FIRST_TIME')
-        @first_time = parse_boolean('FIRST_TIME')
-      else
-        @first_time = yes?('Are you creating a completely new documentation project?')
+      @first_time = option_set?('FIRST_TIME') || !File.exist?('config.rb')
+    end
+
+    def clone_existing_version
+      return if @first_time
+      template = YAML.load_file('.template_version')
+      dir = Dir.mktmpdir
+      files = {}
+      
+      begin
+        run("git clone #{template[:remote]} #{dir}")
+        inside(dir) do
+          run("git reset --hard #{template[:revision]}")
+
+          inside('template') do
+            Dir.glob('**/*', File::FNM_DOTMATCH).reject { |f| File.directory?(f) }.each do |f|
+              files[f] = Digest::MD5.file(f).hexdigest
+            end
+          end
+        end
+      ensure
+        FileUtils.remove_entry(dir)
+      end
+
+      files.each do |filename, template_hash|
+        local_hash = Digest::MD5.file(filename).hexdigest
+
+        if template_hash == local_hash
+          remove_file(filename)
+        else
+          puts "Keeping #{filename}, local changes made vs template"
+        end
       end
     end
 
@@ -88,7 +121,7 @@ e.g. docs.larry-the-cat.service.gov.uk
       raise 'Unable to get remote / revision' unless remote && revision
 
       remove_file '.template_version'
-      create_file '.template_version', { remote: remote, revision: revision }.to_json
+      create_file '.template_version', { remote: remote, revision: revision }.to_yaml
     end
 
   private
