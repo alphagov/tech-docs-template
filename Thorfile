@@ -4,7 +4,12 @@ module Middleman
   class Generator < ::Thor::Group
     include ::Thor::Actions
 
-    source_root File.expand_path(File.dirname(__FILE__))
+    class_option 'template',
+                 aliases: '-T',
+                 default: 'middleman/middleman-templates-default',
+                 desc: 'Use a project template'
+
+    source_root __dir__
 
     def detect_if_first_time_install
       if option_set?('FIRST_TIME')
@@ -69,6 +74,21 @@ e.g. docs.larry-the-cat.service.gov.uk
 
       directory 'optional/source', 'source'
       copy_file 'optional/README.md', 'README.md'
+    end
+
+    def save_version_file
+      remote = nil
+      revision = nil
+
+      inside(__dir__) do
+        remote = run('git remote get-url origin', capture: true).strip
+        revision = run('git rev-parse head', capture: true).strip
+      end
+
+      raise 'Unable to get remote / revision' unless remote && revision
+
+      remove_file '.template_version'
+      create_file '.template_version', { remote: remote, revision: revision }.to_json
     end
 
   private
