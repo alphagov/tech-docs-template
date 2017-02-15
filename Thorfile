@@ -25,7 +25,7 @@ module Middleman
       template = YAML.load_file('.template_version')
       dir = Dir.mktmpdir
       files = {}
-      
+
       begin
         run("git clone #{template[:remote]} #{dir}")
         inside(dir) do
@@ -42,12 +42,16 @@ module Middleman
       end
 
       files.each do |filename, template_hash|
-        local_hash = Digest::MD5.file(filename).hexdigest
+        begin
+          local_hash = Digest::MD5.file(filename).hexdigest
 
-        if template_hash == local_hash
-          remove_file(filename)
-        else
-          puts "Keeping #{filename}, local changes made vs template"
+          if template_hash == local_hash
+            remove_file(filename)
+          else
+            puts "Keeping #{filename}, local changes made vs template"
+          end
+        rescue Errno::ENOENT
+          puts "File #{filename} not found locally, doing nothing"
         end
       end
     end
