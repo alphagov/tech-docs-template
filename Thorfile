@@ -12,8 +12,7 @@ module Middleman
 
     class_option 'template',
                  aliases: '-T',
-                 default: 'middleman/middleman-templates-default',
-                 desc: 'Use a project template'
+                 default: 'alphagov/tech-docs-template'
 
     source_root __dir__
 
