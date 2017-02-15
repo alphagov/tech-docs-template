@@ -8,6 +8,8 @@ module Middleman
   class Generator < ::Thor::Group
     include ::Thor::Actions
 
+    TEMPLATE_VERSION_FILE = '.template_version'.freeze
+
     class_option 'template',
                  aliases: '-T',
                  default: 'middleman/middleman-templates-default',
@@ -15,14 +17,13 @@ module Middleman
 
     source_root __dir__
 
-
     def detect_if_first_time_install
       @first_time = option_set?('FIRST_TIME') || !File.exist?('config.rb')
     end
 
     def clone_existing_version
-      return if @first_time
-      template = YAML.load_file('.template_version')
+      return if @first_time || !File.exist?(TEMPLATE_VERSION_FILE)
+      template = YAML.load_file(TEMPLATE_VERSION_FILE)
       dir = Dir.mktmpdir
       files = {}
 
@@ -124,8 +125,8 @@ e.g. docs.larry-the-cat.service.gov.uk
 
       raise 'Unable to get remote / revision' unless remote && revision
 
-      remove_file '.template_version'
-      create_file '.template_version', { remote: remote, revision: revision }.to_yaml
+      remove_file TEMPLATE_VERSION_FILE
+      create_file TEMPLATE_VERSION_FILE, { remote: remote, revision: revision }.to_yaml
     end
 
   private
