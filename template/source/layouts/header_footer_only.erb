@@ -60,9 +60,7 @@
                   <ul>
                     <% config[:tech_docs][:header_links].each do |title, url| %>
                       <li<% if url == current_page.url %> class="active"<% end %>>
-                        <a href="<%= url %>">
-                          <%= title %>
-                        </a>
+                        <%= link_to title, url %>
                       </li>
                     <% end %>
                   </ul>
