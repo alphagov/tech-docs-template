@@ -14,6 +14,11 @@ module Middleman
                  aliases: '-T',
                  default: 'alphagov/tech-docs-template'
 
+    class_option 'verbose',
+                 type: :boolean,
+                 alias: '-V',
+                 default: false
+
     source_root __dir__
 
     def detect_if_first_time_install
@@ -48,10 +53,10 @@ module Middleman
           if template_hash == local_hash
             remove_file(filename)
           else
-            puts "Keeping #{filename}, local changes made vs template"
+            log "Keeping #{filename}, local changes made vs template"
           end
         rescue Errno::ENOENT
-          puts "File #{filename} not found locally, doing nothing"
+          log "File #{filename} not found locally, doing nothing"
         end
       end
     end
@@ -136,6 +141,11 @@ e.g. docs.larry-the-cat.service.gov.uk
 
     def parse_boolean(key)
       ENV[key] == 'true'
+    end
+
+    def log(*args)
+      return unless options[:verbose]
+      puts(*args)
     end
   end
 end
