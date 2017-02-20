@@ -1,16 +1,63 @@
+require 'yaml'
+require 'fileutils'
+require 'tmpdir'
+require 'digest'
 require 'thor/group'
 
 module Middleman
   class Generator < ::Thor::Group
     include ::Thor::Actions
 
-    source_root File.expand_path(File.dirname(__FILE__))
+    TEMPLATE_VERSION_FILE = '.template_version'.freeze
+
+    class_option 'template',
+                 aliases: '-T',
+                 default: 'alphagov/tech-docs-template'
+
+    class_option 'verbose',
+                 type: :boolean,
+                 alias: '-V',
+                 default: false
+
+    source_root __dir__
 
     def detect_if_first_time_install
-      if option_set?('FIRST_TIME')
-        @first_time = parse_boolean('FIRST_TIME')
-      else
-        @first_time = yes?('Are you creating a completely new documentation project?')
+      @first_time = option_set?('FIRST_TIME') || !File.exist?('config.rb')
+    end
+
+    def clone_existing_version
+      return if @first_time || !File.exist?(TEMPLATE_VERSION_FILE)
+      template = YAML.load_file(TEMPLATE_VERSION_FILE)
+      dir = Dir.mktmpdir
+      files = {}
+
+      begin
+        run("git clone #{template[:remote]} #{dir}")
+        inside(dir) do
+          run("git reset --hard #{template[:revision]}")
+
+          inside('template') do
+            Dir.glob('**/*', File::FNM_DOTMATCH).reject { |f| File.directory?(f) }.each do |f|
+              files[f] = Digest::MD5.file(f).hexdigest
+            end
+          end
+        end
+      ensure
+        FileUtils.remove_entry(dir)
+      end
+
+      files.each do |filename, template_hash|
+        begin
+          local_hash = Digest::MD5.file(filename).hexdigest
+
+          if template_hash == local_hash
+            remove_file(filename)
+          else
+            log "Keeping #{filename}, local changes made vs template"
+          end
+        rescue Errno::ENOENT
+          log "File #{filename} not found locally, doing nothing"
+        end
       end
     end
 
@@ -71,6 +118,21 @@ e.g. docs.larry-the-cat.service.gov.uk
       copy_file 'optional/README.md', 'README.md'
     end
 
+    def save_version_file
+      remote = nil
+      revision = nil
+
+      inside(__dir__) do
+        remote = run('git remote get-url origin', capture: true).strip
+        revision = run('git rev-parse head', capture: true).strip
+      end
+
+      raise 'Unable to get remote / revision' unless remote && revision
+
+      remove_file TEMPLATE_VERSION_FILE
+      create_file TEMPLATE_VERSION_FILE, { remote: remote, revision: revision }.to_yaml
+    end
+
   private
 
     def option_set?(key)
@@ -79,6 +141,11 @@ e.g. docs.larry-the-cat.service.gov.uk
 
     def parse_boolean(key)
       ENV[key] == 'true'
+    end
+
+    def log(*args)
+      return unless options[:verbose]
+      puts(*args)
     end
   end
 end

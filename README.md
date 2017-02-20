@@ -17,7 +17,7 @@ for the name of your new project:
 ```bash
 mkdir my-new-project
 cd my-new-project
-FIRST_TIME=true middleman init . -T alphagov/tech-docs-template
+middleman init . -T alphagov/tech-docs-template
 ```
 
 This will run an interactive prompt where you can set basic configuration for
@@ -41,7 +41,7 @@ In order to configure things like the header, edit `config/tech-docs.yml`.
 From your project folder, run:
 
 ```
-FIRST_TIME=false middleman init . -T alphagov/tech-docs-template
+middleman init . -T alphagov/tech-docs-template
 ```
 
 If you have made any changes to the layout or any of the assets you will be
