@@ -115,7 +115,7 @@
     margin-top: 5px;
   }
 
-  ol + p, ul + p {
+  ol + p, ul + p, .table-container + p {
     margin-top: ceil($gutter * (16 / 19));
     
     @include media(tablet) {
@@ -163,12 +163,12 @@
     display: block;
     max-width: 100%;
     overflow-x: auto;
+    
+    margin-top: $gutter-half;
   }
 
   table {    
     width: 100%;
-
-    margin-bottom: $gutter * 2;
 
     border-collapse: collapse;
     border-spacing: 0;
@@ -178,7 +178,7 @@
     padding: $gutter-one-third $gutter-two-thirds $gutter-one-third 0;
 
     background-color: transparent;
-    border-bottom: 1px solid $grey-2;
+    border-bottom: 1px solid $border-colour;
     border-width: 0 0 1px 0;
 
     @include core-16;
