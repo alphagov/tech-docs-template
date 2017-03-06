@@ -140,12 +140,21 @@
 
   pre code {
     background: none;
+    color: inherit;
   }
 
   code {
     background: $code-01;
-    padding: 3px 3px;
-    border-radius: 3px;
+    padding: 3px 5px;
+    border-radius: 1px;
+    
+    font-family: monaco, Consolas, "Lucida Console", monospace;
+    font-size: 15px;
+    color: $code-0E;
+    
+    @include media(tablet) {
+      font-size: 16px;
+    }
 
     // Handle long strings (URLs, long variable names, etc) by allowing them
     // to break anywhere if required.
