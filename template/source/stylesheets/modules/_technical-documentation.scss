@@ -1,10 +1,32 @@
+@mixin heading-offset($tabletTopMargin) {
+  // Scale margins to scale with font size on mobile (16/19ths)
+  $mobileTopMargin: ceil($tabletTopMargin * (16 / 19));
+  
+  // Offset headings down on mobile so that linking to anchors they appear after
+  // the sticky 'table of contents' element
+  $stickyTocOffset: 20px + $gutter-half + 10px + 1px;
+  
+  // Pad the heading so that when linking to an anchor there is at most a
+  // $gutter-half (mobile) or $gutter (tablet and above) sized gap between the
+  // top of the viewport and the heading.
+  padding-top: min($mobileTopMargin, $gutter-half) + $stickyTocOffset;
+  margin-top: max(0, $mobileTopMargin - $gutter-half) - $stickyTocOffset;
+
+  @include media(tablet) {
+    padding-top: min($tabletTopMargin, $gutter);
+    margin-top: max(0, $tabletTopMargin - $gutter);
+  }
+}
+
 .technical-documentation {
   // Required for IE11 to render <main> correctly
   display: block;
   margin: 0 $gutter-half 10px;
   max-width: 40em;
-
-  line-height: 1.6;
+  
+  line-height: 1.4;
+  
+  color: $text-colour;
 
   @include media(tablet) {
     // We add 2 pixels to the gutter here to ensure there's sufficient spacing between
@@ -12,8 +34,70 @@
     margin: 0 ($gutter + 2px) $gutter;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    padding-top: $gutter-half;
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+
+  // Headings
+  h1 {
+    @include bold-48();
+    @include heading-offset($gutter * 2);
+    
+    &:first-of-type {
+      @include heading-offset($gutter);
+    }
+  }
+
+  h2 {    
+    @include bold-36();
+    @include heading-offset($gutter * 1.5);
+  }
+
+  h3, h4, h5, h6 {
+    @include heading-offset($gutter);
+  }
+
+  h3 {
+    @include bold-24();
+  }
+
+  h4 {
+    @include bold-19();
+  }
+
+  h5 {
+    @include bold-19();
+    color: $secondary-text-colour;
+  }
+
+  h6 {
+    @include core-19();
+    color: $secondary-text-colour;
+  }
+
+  // Expand margin when h1 followed directly by paragraph
+  h1 + p {
+    @include media(tablet) {
+      margin-top: $gutter * 1.5;
+    }
+  }
+
+  // Tighten up margins where headings follow each other
+  h1 + h2 {
+    @include heading-offset($gutter);
+  }
+
+  h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
+    @include heading-offset(20px);
+  }
+
+  p {
+    margin-top: ceil($gutter-half * (16 / 19));
+
+    @include media(tablet) {
+      margin-top: $gutter-half;
+      margin-bottom: 0;
+    }
   }
 
   img {
@@ -28,16 +112,6 @@
     @include media(desktop) {
       padding-left: $gutter;
     }
-  }
-
-  h1 {
-    border-top: 5px solid $text-colour;
-    margin-top: $gutter * 2;
-  }
-
-  h1:first-child {
-    border-top: none;
-    margin-top: 0;
   }
 
   blockquote {
@@ -57,7 +131,6 @@
 
   pre code {
     background: none;
-    padding: 0;
   }
 
   code {
