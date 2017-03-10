@@ -1,5 +1,7 @@
+// Adds combination of margin and padding to headings to make them appear
+// correctly when they're linked to as anchors, and scale them on mobile
 @mixin heading-offset($tabletTopMargin) {
-  // Scale margins to scale with font size on mobile (16/19ths)
+  // Scale margins with font size on mobile (16/19ths)
   $mobileTopMargin: ceil($tabletTopMargin * (16 / 19));
   
   // Offset headings down on mobile so that linking to anchors they appear after
@@ -36,7 +38,7 @@
 
   // Headings
   h1 {
-    @include bold-48();
+    @include bold-48;
     @include heading-offset($gutter * 2);
     
     &:first-of-type {
@@ -45,7 +47,7 @@
   }
 
   h2 {    
-    @include bold-36();
+    @include bold-36;
     @include heading-offset($gutter * 1.5);
   }
 
@@ -54,20 +56,20 @@
   }
 
   h3 {
-    @include bold-24();
+    @include bold-24;
   }
 
   h4 {
-    @include bold-19();
+    @include bold-19;
   }
 
   h5 {
-    @include bold-19();
+    @include bold-19;
     color: $secondary-text-colour;
   }
 
   h6 {
-    @include core-19();
+    @include core-19;
     color: $secondary-text-colour;
   }
 
