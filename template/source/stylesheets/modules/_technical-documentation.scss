@@ -170,6 +170,16 @@
     word-break: break-word;
   }
 
+  // Support monospace headings for e.g. listing API endpoints
+  h1, h2, h3, h4, h5, h6 {
+    code {
+      font-size: inherit;
+      color: $text-colour;
+      background: none;
+      padding: 0;
+    }
+  }
+
   .table-container {
     display: block;
     max-width: 100%;
