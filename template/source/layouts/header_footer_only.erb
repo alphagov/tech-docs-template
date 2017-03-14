@@ -59,10 +59,8 @@
                 <nav id="navigation" class="header__navigation js-nav" aria-label="Top Level Navigation" aria-hidden="true">
                   <ul>
                     <% config[:tech_docs][:header_links].each do |title, url| %>
-                      <li<% if url == current_page.url %> class="active"<% end %>>
-                        <a href="<%= url %>">
-                          <%= title %>
-                        </a>
+                      <li<% if url == current_page.path %> class="active"<% end %>>
+                        <%= link_to title, url %>
                       </li>
                     <% end %>
                   </ul>
