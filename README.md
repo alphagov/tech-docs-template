@@ -61,7 +61,16 @@ To run the tests on your machine:
 
 Or, on the command line, run `bundle exec rake jasmine:ci`.
 
+## Local development
 
+If you make changes to the template you can create a test site with this command.
+Make sure that you've committed your changes first, because Middleman works with Git.
+
+```
+middleman init tmp/test-run -T file://$(pwd)
+cd tmp/test-run
+bundle exec middleman build
+```
 
 [mm]: https://middlemanapp.com/
 [mmt]: https://middlemanapp.com/advanced/project_templates/
