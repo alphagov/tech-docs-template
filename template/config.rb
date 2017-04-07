@@ -12,7 +12,8 @@ set :markdown,
       with_toc_data: true
     ),
     fenced_code_blocks: true,
-    tables: true
+    tables: true,
+    no_intra_emphasis: true
 
 # Per-page layout changes:
 #
