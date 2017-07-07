@@ -15,9 +15,7 @@ From the command line run the following commands, substituting `my-new-project`
 for the name of your new project:
 
 ```bash
-mkdir my-new-project
-cd my-new-project
-middleman init . -T alphagov/tech-docs-template
+middleman init my-new-project -T alphagov/tech-docs-template
 ```
 
 This will run an interactive prompt where you can set basic configuration for
