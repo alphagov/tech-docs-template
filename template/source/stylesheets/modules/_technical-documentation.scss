@@ -40,9 +40,11 @@
   h1 {
     @include bold-48;
     @include heading-offset($gutter * 2);
+    border-top: 5px solid $text-colour;
     
     &:first-of-type {
       @include heading-offset($gutter);
+      border-top: none;
     }
   }
 
