@@ -49,7 +49,8 @@
       }
     }
 
-    .no-flexbox.no-flexboxtweener {
+    .no-flexbox.no-flexboxtweener,
+    .no-js {
       .app-pane__toc {
         float: left;
         width: $toc-width;
