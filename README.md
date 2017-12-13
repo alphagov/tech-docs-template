@@ -65,10 +65,13 @@ If you make changes to the template you can create a test site with this command
 Make sure that you've committed your changes first, because Middleman works with Git.
 
 ```
-middleman init tmp/test-run -T file://$(pwd)
+bundle install
+bundle exec middleman init tmp/test-run -T file://$(pwd)
 cd tmp/test-run
-bundle exec middleman build
+bundle exec middleman server
 ```
+
+Your generated site should appear on <http://localhost:4567>.
 
 [mm]: https://middlemanapp.com/
 [mmt]: https://middlemanapp.com/advanced/project_templates/
