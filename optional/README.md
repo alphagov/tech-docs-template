@@ -17,6 +17,8 @@ bundle install
 
 To make changes edit the source files in the `source` folder.
 
+### Single page output
+
 Although a single page of HTML is generated the markdown is spread across
 multiple files to make it easier to manage. They can be found in
 `source/documentation`.
@@ -32,6 +34,12 @@ generated output.
 
 Including files manually like this lets us specify the position they appear in
 the page.
+
+### Multiple pages
+
+To add a completely new page, create a file with a `.html.md` extension in the `/source` directory.
+
+For example, `source/about.html.md` will be accessible on <http://localhost:4567/about.html>.
 
 ## Preview
 
