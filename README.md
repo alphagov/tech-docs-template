@@ -28,7 +28,15 @@ In order to configure things like the header, edit `config/tech-docs.yml`.
 
 ## Updating a project to use the latest template
 
-From your project folder, run:
+In most cases you can update your project to the latest template by running:
+
+```
+bundle update govuk_tech_docs
+```
+
+This will make the site use the latest version of the [govuk_tech_docs gem](https://github.com/alphagov/tech-docs-gem)).
+
+The [CHANGELOG](https://github.com/alphagov/tech-docs-gem/blob/master/CHANGELOG.md) in the gem should tell you what changed and if you have to update any of your files. If that is the case, run:
 
 ```
 middleman init . -T alphagov/tech-docs-template
