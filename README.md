@@ -47,8 +47,7 @@ Make sure that you've committed your changes first, because Middleman works with
 bundle install
 bundle exec middleman init tmp/test-run -T file://$(pwd)
 cd tmp/test-run
-bundle install
-bundle exec middleman build --verbose
+bundle exec middleman server
 ```
 
 Your generated site should appear on <http://localhost:4567>.
