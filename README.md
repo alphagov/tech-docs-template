@@ -5,6 +5,18 @@ you can use to build technical documentation using a GOV.UK style.
 
 ![Screenshot of Example Documentation](/screenshots/composite.png)
 
+## Active users
+
+This project is in active use by:
+
+- [GDS Way](https://gds-way.cloudapps.digital) ([GitHub repo](https://github.com/alphagov/gds-way))
+- [GOV.UK Content API](https://content-api.publishing.service.gov.uk) ([GitHub repo](https://github.com/alphagov/govuk-content-api-docs))
+- [GOV.UK Developer docs](https://docs.publishing.service.gov.uk/) ([GitHub repo](https://github.com/alphagov/govuk-developer-docs))
+- [GOV.UK Pay](https://govukpay-docs.cloudapps.digital) ([GitHub repo](https://github.com/alphagov/pay-tech-docs))
+- [GOV.UK Platform as a Service](https://docs.cloud.service.gov.uk/) ([GitHub repo](https://github.com/alphagov/paas-tech-docs))
+- [GOV.UK Registers](https://registers-docs.cloudapps.digital) ([GitHub repo](https://github.com/alphagov/registers-tech-docs))
+- [Reliability Engineering](https://reliability-engineering.cloudapps.digital) ([GitHub repo](https://github.com/alphagov/reliability-engineering))
+
 ## Prerequisites
 
 - You'll need [middleman][mm] installed, and its dependencies (Ruby). If you have Ruby v2.2.2 or newer installed you _should_ just be able to run `gem install middleman`. Installing or updating Ruby is outside the scope of this README.
