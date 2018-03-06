@@ -17,6 +17,10 @@ This project is in active use by:
 - [GOV.UK Registers](https://registers-docs.cloudapps.digital) ([GitHub repo](https://github.com/alphagov/registers-tech-docs))
 - [Reliability Engineering](https://reliability-engineering.cloudapps.digital) ([GitHub repo](https://github.com/alphagov/reliability-engineering))
 
+In development:
+
+- GOV.UK Notify [GitHub repo](https://github.com/alphagov/notifications-tech-docs)
+
 ## Prerequisites
 
 - You'll need [middleman][mm] installed, and its dependencies (Ruby). If you have Ruby v2.2.2 or newer installed you _should_ just be able to run `gem install middleman`. Installing or updating Ruby is outside the scope of this README.
