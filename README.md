@@ -22,7 +22,7 @@ This project is in active use by:
 
 In development:
 
-- GOV.UK Notify [GitHub repo](https://github.com/alphagov/notifications-tech-docs)
+- GOV.UK Notify ([GitHub repo](https://github.com/alphagov/notifications-tech-docs))
 
 ## Prerequisites
 
