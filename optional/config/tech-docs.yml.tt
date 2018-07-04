@@ -15,7 +15,7 @@ header_links:
   Support: https://www.larry-the-cat.service.gov.uk/support
 
 # Enables search functionality. This indexes pages only and is not recommended for single-page sites.
-search: false
+enable_search: false
 
 # Tracking ID from Google Analytics (e.g. UA-XXXX-Y)
 ga_tracking_id:
