@@ -71,7 +71,7 @@ module Middleman
       if option_set?('USE_PAAS')
         @use_paas = parse_boolean('USE_PAAS')
       else
-        @use_paas = yes?('Will you be deploying this on Government PaaS?')
+        @use_paas = yes?('Will you be deploying this on GOV.UK PaaS?')
       end
 
       return unless @use_paas
