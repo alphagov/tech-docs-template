@@ -10,7 +10,6 @@ This repo is the template used to generate new sites. The generated site uses HT
 ## Local development
 
 If you make changes to the template you can create a test site with this command.
-Make sure that you've committed your changes first, because Middleman works with Git.
 
 ```
 bundle install
