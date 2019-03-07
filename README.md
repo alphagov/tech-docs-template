@@ -1,12 +1,11 @@
 # Tech Docs Template
 
-The Tech Docs Template is a [middleman][mm] [template][mmt] that
+The Tech Docs Template is a [middleman template][mmt] that
 you can use to build technical documentation using a GOV.UK style.
 
-This repo is the template used to generate new sites. The generated site uses HTML,
-CSS, JS and images from the [tech docs gem](https://github.com/alphagov/tech-docs-gem).
+This repo is the template used to generate new sites. The generated site uses HTML, CSS, JS and images from the [tech docs gem](https://github.com/alphagov/tech-docs-gem).
 
-👉 [See alphagov.github.io/tech-docs-manual](https://alphagov.github.io/tech-docs-manual)
+👉 Find out more about the template and its features from the [Tech Docs Template documentation][tdt-docs].
 
 ## Local development
 
@@ -22,5 +21,9 @@ bundle exec middleman server
 
 Your generated site should appear on <http://localhost:4567>.
 
-[mm]: https://middlemanapp.com/
+
+
+
+
 [mmt]: https://middlemanapp.com/advanced/project_templates/
+[tdt-docs]: https://tdt-documentation.london.cloudapps.digital
