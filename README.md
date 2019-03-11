@@ -7,9 +7,12 @@ This repo is the template used to generate new sites. The generated site uses HT
 
 👉 Find out more about the template and its features from the [Tech Docs Template documentation][tdt-docs].
 
-## Local development
+## Before you start
 
-If you make changes to the template you can create a test site with this command.
+To use the Tech Docs Template you need:
+
+- [Ruby][install-ruby]
+- [Middleman][install-middleman]
 
 ```
 bundle install
