@@ -42,6 +42,7 @@ If you make changes to the `config/tech-docs.yml` configuration file, you need t
 
 ## Contribute
 
+👉 See the [CONTRIBUTE.md file in the tech-docs-gem repository][contribute].
 
 ## Licence
 
