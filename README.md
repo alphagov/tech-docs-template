@@ -24,7 +24,9 @@ middleman init PROJECT_NAME -T alphagov/tech-docs-template
 
 where `PROJECT_NAME` is the name of your new project.
 
-This command creates a minimal functional website using the Tech Docs Template.
+This command creates a minimal functional website using the Tech Docs Template:
+
+![Screenshot of Example Documentation](screenshots/composite.png)
 
 ## Preview your website locally
 
