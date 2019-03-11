@@ -51,6 +51,21 @@ You can change your website's configuration by editing the `config/tech-docs.yml
 You can set page-specific options by editing the page's frontmatter.
 
 👉 See how [frontmatter configuration options][frontmatter] are available.
+
+## Adding content
+
+You can add content by editing the `index.html.md.erb` file. These files support content in:
+
+- Markdown
+- HTML
+- Ruby
+
+👉 For example, you can use Markdown and HTML to [generate different content types][example-content] and [Ruby partials to manage content][partials].
+
+Any file in the `source` folder ending in `.html.md.erb` produces a separate page for your website.
+
+👉 Learn more about [producing more complex page structures][multipage] for your website.
+
 ## Contribute
 
 👉 See the [CONTRIBUTE.md file in the tech-docs-gem repository][contribute].
