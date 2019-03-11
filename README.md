@@ -83,6 +83,13 @@ bundle exec middleman build`
 Every time you run this command, the `build` folder gets generated from scratch. This means any changes to the `build` folder that are not part of the build command will get overwritten.
 
 There are many options for hosting and pushing changes to your website, so it's worth considering user needs and constraints before making a choice.
+
+## Troubleshooting
+
+Run `bundle update` to make sure you're using the most recent Ruby gem versions.
+
+Run `bundle exec middleman build --verbose` to get detailed error messages to help with finding the problem.
+
 ## Contribute
 
 👉 See the [CONTRIBUTE.md file in the tech-docs-gem repository][contribute].
