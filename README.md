@@ -106,3 +106,10 @@ The documentation is [© Crown copyright][copyright] and available under the ter
 [ogl]: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
 [mmt]: https://middlemanapp.com/advanced/project_templates/
 [tdt-docs]: https://tdt-documentation.london.cloudapps.digital
+[config]: https://tdt-documentation.london.cloudapps.digital/configuration-options.html#configuration-options
+[frontmatter]: https://tdt-documentation.london.cloudapps.digital/frontmatter.html#frontmatter
+[multipage]: https://tdt-documentation.london.cloudapps.digital/multipage.html#build-a-multipage-site
+[partials]: https://tdt-documentation.london.cloudapps.digital/single_page.html#add-partial-lines
+[contribute]: https://github.com/alphagov/tech-docs-gem/blob/master/CONTRIBUTING.md
+[install-ruby]: https://tdt-documentation.london.cloudapps.digital/install_macs.html#install-ruby
+[install-middleman]: https://tdt-documentation.london.cloudapps.digital/install_macs.html#install-middleman
