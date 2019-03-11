@@ -36,7 +36,7 @@ bundle exec middleman server
 
 👉 See the generated website on `http://localhost:4567` in your browser. Any content changes you make to your website will be updated in real time.
 
-To shut down the Middleman instance running on your machine, use `ctrl+C`
+To shut down the Middleman instance running on your machine, use `ctrl+C`.
 
 If you make changes to the `config/tech-docs.yml` configuration file, you need to restart Middleman to see the changes.
 
@@ -109,6 +109,7 @@ The documentation is [© Crown copyright][copyright] and available under the ter
 [config]: https://tdt-documentation.london.cloudapps.digital/configuration-options.html#configuration-options
 [frontmatter]: https://tdt-documentation.london.cloudapps.digital/frontmatter.html#frontmatter
 [multipage]: https://tdt-documentation.london.cloudapps.digital/multipage.html#build-a-multipage-site
+[example-content]: https://tdt-documentation.london.cloudapps.digital/content.html#content-examples
 [partials]: https://tdt-documentation.london.cloudapps.digital/single_page.html#add-partial-lines
 [contribute]: https://github.com/alphagov/tech-docs-gem/blob/master/CONTRIBUTING.md
 [install-ruby]: https://tdt-documentation.london.cloudapps.digital/install_macs.html#install-ruby
