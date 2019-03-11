@@ -40,6 +40,17 @@ To shut down the Middleman instance running on your machine, use `ctrl+C`
 
 If you make changes to the `config/tech-docs.yml` configuration file, you need to restart Middleman to see the changes.
 
+## Configure your website
+
+The `middleman init` command creates a minimal website with basic configuration.
+
+You can change your website's configuration by editing the `config/tech-docs.yml` file.
+
+👉 See what [configuration options][config] are available.
+
+You can set page-specific options by editing the page's frontmatter.
+
+👉 See how [frontmatter configuration options][frontmatter] are available.
 ## Contribute
 
 👉 See the [CONTRIBUTE.md file in the tech-docs-gem repository][contribute].
