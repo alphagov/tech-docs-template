@@ -66,6 +66,23 @@ Any file in the `source` folder ending in `.html.md.erb` produces a separate pag
 
 👉 Learn more about [producing more complex page structures][multipage] for your website.
 
+## Publishing
+
+To publish your website, you need to:
+
+- build the HTML pages
+- host your website
+- decide how to push changes to your website
+
+To build the HTML pages from content in your `source` folder, run:
+
+```
+bundle exec middleman build`
+```
+
+Every time you run this command, the `build` folder gets generated from scratch. This means any changes to the `build` folder that are not part of the build command will get overwritten.
+
+There are many options for hosting and pushing changes to your website, so it's worth considering user needs and constraints before making a choice.
 ## Contribute
 
 👉 See the [CONTRIBUTE.md file in the tech-docs-gem repository][contribute].
