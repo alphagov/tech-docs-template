@@ -24,5 +24,6 @@ Your generated site should appear on <http://localhost:4567>.
 
 
 
+[mit]: LICENCE
 [mmt]: https://middlemanapp.com/advanced/project_templates/
 [tdt-docs]: https://tdt-documentation.london.cloudapps.digital
