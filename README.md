@@ -31,9 +31,7 @@ middleman init PROJECT_NAME -T alphagov/tech-docs-template
 
 where `PROJECT_NAME` is the name of your new project.
 
-This command creates a minimal functional website using the Tech Docs Template:
-
-![Screenshot of Example Documentation](screenshots/composite.png)
+This command creates a minimal functional website using the Tech Docs Template.
 
 ## Preview your website locally
 
@@ -74,6 +72,8 @@ You can add content by editing the `index.html.md.erb` file. These files support
 Any file in the `source` folder ending in `.html.md.erb` produces a separate page for your website.
 
 👉 Learn more about [producing more complex page structures][multipage] for your website.
+
+![Screenshot of Example Documentation](screenshots/multipage-example.png)
 
 ## Publishing
 
