@@ -12,7 +12,7 @@ You’re welcome to use the template even if your service isn’t considered par
 - use the GDS Transport typeface
 - suggest that it’s an official UK government website if it’s not
 
-👉 Find out more about the template and its features from the [Tech Docs Template documentation][tdt-docs].
+👉 To find out more about setting up and managing content for a website using this template, see the [Tech Docs Template documentation][tdt-docs].
 
 ## Before you start
 
