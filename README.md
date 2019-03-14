@@ -1,6 +1,6 @@
 # Tech Docs Template
 
-The Tech Docs Template is a [middleman template][mmt] that
+The Tech Docs Template is a [Middleman template][mmt] that
 you can use to build technical documentation using a GOV.UK style.
 
 This repo is the template used to generate new sites. The generated site uses HTML, CSS, JS and images from the [tech docs gem](https://github.com/alphagov/tech-docs-gem).
