@@ -1,85 +1,85 @@
 # Technical Documentation
 
-## Getting started
+This project uses the [Tech Docs Template][template], which is a [Middleman template][mmt] that you can use to build technical documentation using a GOV.UK style.
 
-To preview or build the website, we need to use the terminal.
+You’re welcome to use the template even if your service isn’t considered part of GOV.UK, but your site or service must not:
 
-Install Ruby with Rubygems, perferably with a [Ruby version manager][rvm],
-and the [Bundler gem][bundler].
+- identify itself as being part of GOV.UK
+- use the crown or GOV.UK logotype in the header
+- use the GDS Transport typeface
+- suggest that it’s an official UK government website if it’s not
 
-In the application folder type the following to install the required gems:
+👉 To find out more about setting up and managing content for a website using this template, see the [Tech Docs Template documentation][tdt-docs].
 
-```
-bundle install
-```
+## Before you start
+
+To use the Tech Docs Template you need:
+
+- [Ruby][install-ruby]
+- [Middleman][install-middleman]
 
 ## Making changes
 
-To make changes edit the source files in the `source` folder.
+To make changes to the documentation for the Tech Docs Template website, edit files in the `source` folder of this repository.
 
-### Single page output
+You can add content by editing the `.html.md.erb` files. These files support content in:
 
-Although a single page of HTML is generated the markdown is spread across
-multiple files to make it easier to manage. They can be found in
-`source/documentation`.
+- Markdown
+- HTML
+- Ruby
 
-A new markdown file isn't automatically included in the generated output. If we
-add a new markdown file at the location `source/documentation/agile/scrum.md`,
-the following snippet in `source/index.html.md.erb`, includes it in the
-generated output.
+👉 You can use Markdown and HTML to [generate different content types][example-content] and [Ruby partials to manage content][partials].
 
-```
-<%= partial 'documentation/agile/scrum' %>
-```
+👉 Learn more about [producing more complex page structures][multipage] for your website.
 
-Including files manually like this lets us specify the position they appear in
-the page.
+## Preview your changes locally
 
-### Multiple pages
+To preview your new website locally, navigate to your project folder and run:
 
-To add a completely new page, create a file with a `.html.md` extension in the `/source` directory.
-
-For example, `source/about.html.md` will be accessible on <http://localhost:4567/about.html>.
-
-## Preview
-
-Whilst writing documentation we can run a middleman server to preview how the
-published version will look in the browser. After saving a change the preview in
-the browser will automatically refresh.
-
-The preview is only available on our own computer. Others won't be able to
-access it if they are given the link.
-
-Type the following to start the server:
-
-```
+```sh
 bundle exec middleman server
 ```
 
-If all goes well something like the following output will be displayed:
+👉 See the generated website on `http://localhost:4567` in your browser. Any content changes you make to your website will be updated in real time.
 
-```
-== The Middleman is loading
-== LiveReload accepting connections from ws://192.168.0.8:35729
-== View your site at "http://Laptop.local:4567", "http://192.168.0.8:4567"
-== Inspect your site configuration at "http://Laptop.local:4567/__middleman", "http://192.168.0.8:4567/__middleman"
-```
+To shut down the Middleman instance running on your machine, use `ctrl+C`.
 
-You should now be able to view a live preview at http://localhost:4567.
+If you make changes to the `config/tech-docs.yml` configuration file, you need to restart Middleman to see the changes.
 
 ## Build
 
-If you want to publish the website without using a build script you may need to
-build the static HTML files.
-
-Type the following to build the HTML:
+To build the HTML pages from content in your `source` folder, run:
 
 ```
-bundle exec middleman build
+bundle exec middleman build`
 ```
 
-This will create a `build` subfolder in the application folder which contains
-the HTML and asset files ready to be published.
+Every time you run this command, the `build` folder gets generated from scratch. This means any changes to the `build` folder that are not part of the build command will get overwritten.
 
-[rvm]: https://www.ruby-lang.org/en/documentation/installation/#managers
-[bundler]: http://bundler.io/
+## Troubleshooting
+
+Run `bundle update` to make sure you're using the most recent Ruby gem versions.
+
+Run `bundle exec middleman build --verbose` to get detailed error messages to help with finding the problem.
+
+## Licence
+
+Unless stated otherwise, the codebase is released under [the MIT License][mit].
+This covers both the codebase and any sample code in the documentation.
+
+The documentation is [© Crown copyright][copyright] and available under the terms of the [Open Government 3.0][ogl] licence.
+
+[mit]: LICENCE
+[copyright]: http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/
+[ogl]: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
+[mmt]: https://middlemanapp.com/advanced/project_templates/
+[tdt-docs]: https://tdt-documentation.london.cloudapps.digital
+[config]: https://tdt-documentation.london.cloudapps.digital/configuration-options.html#configuration-options
+[frontmatter]: https://tdt-documentation.london.cloudapps.digital/frontmatter.html#frontmatter
+[multipage]: https://tdt-documentation.london.cloudapps.digital/multipage.html#build-a-multipage-site
+[example-content]: https://tdt-documentation.london.cloudapps.digital/content.html#content-examples
+[partials]: https://tdt-documentation.london.cloudapps.digital/single_page.html#add-partial-lines
+[install-ruby]: https://tdt-documentation.london.cloudapps.digital/install_macs.html#install-ruby
+[install-middleman]: https://tdt-documentation.london.cloudapps.digital/install_macs.html#install-middleman
+[gem]: https://github.com/alphagov/tech-docs-gem
+[template]: https://github.com/alphagov/tech-docs-template
