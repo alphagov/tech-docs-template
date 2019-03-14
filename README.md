@@ -5,13 +5,12 @@ you can use to build technical documentation using a GOV.UK style.
 
 This repo is the template used to generate new sites. The generated site uses HTML, CSS, JS and images from the [tech docs gem](https://github.com/alphagov/tech-docs-gem).
 
-If your website is not published on the `.service.gov.uk` domain, it must not:
+You’re welcome to use the template even if your service isn’t considered part of GOV.UK, but your site or service must not:
 
-- use the [GDS Transport typeface][font]
-- use the [crown or GOV.UK logotype in the header][crown-logo]
-
-[font]: https://design-system.service.gov.uk/styles/typography/
-[crown-logo]: https://tdt-documentation.london.cloudapps.digital/configuration-options.html#show-govuk-logo
+- identify itself as being part of GOV.UK
+- use the crown or GOV.UK logotype in the header
+- use the GDS Transport typeface
+- suggest that it’s an official UK government website if it’s not
 
 👉 Find out more about the template and its features from the [Tech Docs Template documentation][tdt-docs].
 
