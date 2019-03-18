@@ -1,11 +1,18 @@
 # Tech Docs Template
 
-The Tech Docs Template is a [middleman template][mmt] that
+The Tech Docs Template is a [Middleman template][mmt] that
 you can use to build technical documentation using a GOV.UK style.
 
 This repo is the template used to generate new sites. The generated site uses HTML, CSS, JS and images from the [tech docs gem](https://github.com/alphagov/tech-docs-gem).
 
-👉 Find out more about the template and its features from the [Tech Docs Template documentation][tdt-docs].
+You’re welcome to use the template even if your service isn’t considered part of GOV.UK, but your site or service must not:
+
+- identify itself as being part of GOV.UK
+- use the crown or GOV.UK logotype in the header
+- use the GDS Transport typeface
+- suggest that it’s an official UK government website if it’s not
+
+👉 To find out more about setting up and managing content for a website using this template, see the [Tech Docs Template documentation][tdt-docs].
 
 ## Before you start
 
@@ -24,9 +31,7 @@ middleman init PROJECT_NAME -T alphagov/tech-docs-template
 
 where `PROJECT_NAME` is the name of your new project.
 
-This command creates a minimal functional website using the Tech Docs Template:
-
-![Screenshot of Example Documentation](screenshots/composite.png)
+This command creates a minimal functional website using the Tech Docs Template.
 
 ## Preview your website locally
 
@@ -67,6 +72,8 @@ You can add content by editing the `index.html.md.erb` file. These files support
 Any file in the `source` folder ending in `.html.md.erb` produces a separate page for your website.
 
 👉 Learn more about [producing more complex page structures][multipage] for your website.
+
+![Screenshot of Example Documentation](screenshots/multipage-example.png)
 
 ## Publishing
 
