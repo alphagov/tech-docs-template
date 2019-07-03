@@ -86,7 +86,7 @@ To publish your website, you need to:
 To build the HTML pages from content in your `source` folder, run:
 
 ```
-bundle exec middleman build`
+bundle exec middleman build
 ```
 
 Every time you run this command, the `build` folder gets generated from scratch. This means any changes to the `build` folder that are not part of the build command will get overwritten.
