@@ -115,11 +115,11 @@ The documentation is [© Crown copyright][copyright] and available under the ter
 [ogl]: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
 [mmt]: https://middlemanapp.com/advanced/project_templates/
 [tdt-docs]: https://tdt-documentation.london.cloudapps.digital
-[config]: https://tdt-documentation.london.cloudapps.digital/configuration-options.html#configuration-options
+[config]: https://tdt-documentation.london.cloudapps.digital/amend_project/configuration/#configuration-options
 [frontmatter]: https://tdt-documentation.london.cloudapps.digital/frontmatter.html#frontmatter
-[multipage]: https://tdt-documentation.london.cloudapps.digital/multipage.html#build-a-multipage-site
-[example-content]: https://tdt-documentation.london.cloudapps.digital/content.html#content-examples
-[partials]: https://tdt-documentation.london.cloudapps.digital/single_page.html#add-partial-lines
+[multipage]: https://tdt-documentation.london.cloudapps.digital/create_project/multipage/#build-a-multipage-documentation-site
+[example-content]: https://tdt-documentation.london.cloudapps.digital/amend_project/content/#change-your-content
+[partials]: https://tdt-documentation.london.cloudapps.digital/create_project/single_page/#add-partial-lines
 [contribute]: https://github.com/alphagov/tech-docs-gem/blob/master/CONTRIBUTING.md
-[install-ruby]: https://tdt-documentation.london.cloudapps.digital/install_macs.html#install-ruby
-[install-middleman]: https://tdt-documentation.london.cloudapps.digital/install_macs.html#install-middleman
+[install-ruby]: https://tdt-documentation.london.cloudapps.digital/create_project/setup_local/#install-ruby
+[install-middleman]: https://tdt-documentation.london.cloudapps.digital/create_project/setup_local/#install-ruby
