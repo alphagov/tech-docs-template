@@ -100,8 +100,6 @@ e.g. docs.larry-the-cat.service.gov.uk
       return unless @use_paas
 
       template 'optional/manifest.yml', 'manifest.yml'
-      copy_file 'optional/nginx.conf', 'source/nginx.conf'
-      gsub_file 'source/nginx.conf', '__CANONICAL_HOST__', @canonical_host
       directory 'optional/script', 'script'
     end
 
