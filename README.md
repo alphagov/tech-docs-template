@@ -14,40 +14,6 @@ You’re welcome to use the template even if your service isn’t considered par
 
 👉 To find out more about setting up and managing content for a website using this template, see the [Tech Docs Template documentation][tdt-docs].
 
-## Get started
-
-To use the Tech Docs Template, see the [Tech Docs Template documentation on getting started](https://tdt-documentation.london.cloudapps.digital/create_project/get_started/#get-started).
-
-## Create a new documentation project
-
-To create a new project using the Tech Docs Template, see the [Tech Docs Template documentation on creating a new documentation project](https://tdt-documentation.london.cloudapps.digital/create_project/create_new_project/#create-a-new-documentation-project).
-
-## Preview your website locally
-
-To preview your new website locally, see the [Tech Docs Template documentation on previewing your documentation](https://tdt-documentation.london.cloudapps.digital/create_project/preview/#preview-your-documentation).
-
-## Configure your website
-
-To configure your documentation site, see the [Tech Docs Template documentation on configuring your documentation site](https://tdt-documentation.london.cloudapps.digital/configure_project/global_configuration/#configure-your-documentation-site).
-
-To configure individual documentation site pages, see the [Tech Docs Template documentation on configuring page settings](https://tdt-documentation.london.cloudapps.digital/configure_project/frontmatter/#configure-page-settings).
-
-## Write your content
-
-For more information on writing and editing your content, see the [Tech Docs Template documentation on writing your documentation](https://tdt-documentation.london.cloudapps.digital/write_docs/#write-your-documentation).
-
-## Publishing
-
-For more information on publishing your website, see the [Tech Docs Template documentation on publishing your documentation project](https://tdt-documentation.london.cloudapps.digital/publish_project/#publish-your-documentation-project).
-
-## Troubleshooting
-
-Run `bundle update` to make sure you're using the most recent Ruby gem versions.
-
-Run `bundle exec middleman build --verbose` to get detailed error messages to help with finding the problem.
-
-For more information, see the [Tech Docs Template documentation on maintaining your documentation project](https://tdt-documentation.london.cloudapps.digital/maintain_project/#maintain-your-documentation-project).
-
 ## Contribute
 
 👉 See the [CONTRIBUTE.md file in the tech-docs-gem repository][contribute].
