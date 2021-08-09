@@ -16,7 +16,7 @@ You’re welcome to use the template even if your service isn’t considered par
 
 ## Contribute
 
-👉 See the [CONTRIBUTE.md file in the tech-docs-gem repository][contribute].
+👉 Find out how to [contribute][contribute].
 
 ## Licence
 
@@ -35,6 +35,6 @@ The documentation is [© Crown copyright][copyright] and available under the ter
 [multipage]: https://tdt-documentation.london.cloudapps.digital/create_project/multipage/#build-a-multipage-documentation-site
 [example-content]: https://tdt-documentation.london.cloudapps.digital/amend_project/content/#change-your-content
 [partials]: https://tdt-documentation.london.cloudapps.digital/create_project/single_page/#add-partial-lines
-[contribute]: https://github.com/alphagov/tech-docs-gem/blob/master/CONTRIBUTING.md
+[contribute]: https://tdt-documentation.london.cloudapps.digital/support/#contribute
 [install-ruby]: https://tdt-documentation.london.cloudapps.digital/create_project/setup_local/#install-ruby
 [install-middleman]: https://tdt-documentation.london.cloudapps.digital/create_project/setup_local/#install-ruby
