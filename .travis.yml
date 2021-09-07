@@ -1,5 +1,7 @@
 language: ruby
 rvm:
  - 2.6.6
+before_install:
+  - nvm install 10
 script:
   - ./create-test-site.sh
