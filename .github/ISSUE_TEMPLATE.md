@@ -1,12 +1,12 @@
 <!--
 Please fill in the sections below.
 
-After you submit your issue, the technical writing team from Central Digital and Data Office (CDDO) will discuss and prioritise it at our fortnightly triage meeting. We’ll then let you know if and when we’ll move it forward.
+After you submit your issue, the technical writing team from the Central Digital and Data Office (CDDO) will discuss and prioritise it at our fortnightly triage meeting. We’ll then let you know if and when we’ll move it forward.
 -->
- 
+
 ## What should change
 
-<!-- What are you trying to do? Is this something you think should behave differently, or something that you currently cannot do? -->
+<!-- What would fix the issue? Is this something you think should behave differently, or something that you currently cannot do? -->
 
 ## User need
 
