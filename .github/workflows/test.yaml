@@ -18,7 +18,6 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6.6
           bundler-cache: true
 
       - run: ./create-test-site.sh
