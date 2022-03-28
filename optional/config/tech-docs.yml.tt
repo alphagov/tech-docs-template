@@ -3,7 +3,7 @@ host: <%= @canonical_host %>
 
 # Header-related options
 show_govuk_logo: true
-service_name: My First Service
+service_name: Name of API
 service_link: https://www.larry-the-cat.service.gov.uk
 phase: Beta
 
