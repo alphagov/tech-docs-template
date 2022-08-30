@@ -36,3 +36,4 @@ prevent_indexing: false
 
 show_contribution_banner: true
 github_repo: alphagov/YOUR_REPO
+github_branch: main
