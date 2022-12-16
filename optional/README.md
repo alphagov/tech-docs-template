@@ -79,7 +79,7 @@ The documentation is [© Crown copyright][copyright] and available under the ter
 [multipage]: https://tdt-documentation.london.cloudapps.digital/multipage.html#build-a-multipage-site
 [example-content]: https://tdt-documentation.london.cloudapps.digital/content.html#content-examples
 [partials]: https://tdt-documentation.london.cloudapps.digital/single_page.html#add-partial-lines
-[install-ruby]: https://tdt-documentation.london.cloudapps.digital/install_macs.html#install-ruby
-[install-middleman]: https://tdt-documentation.london.cloudapps.digital/install_macs.html#install-middleman
+[install-ruby]: https://tdt-documentation.london.cloudapps.digital/create_project/get_started/#install-ruby
+[install-middleman]: https://tdt-documentation.london.cloudapps.digital/create_project/get_started/#install-middleman
 [gem]: https://github.com/alphagov/tech-docs-gem
 [template]: https://github.com/alphagov/tech-docs-template
