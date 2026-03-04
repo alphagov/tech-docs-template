@@ -14,6 +14,8 @@ header_links:
   Documentation: /
   Support: https://www.larry-the-cat.service.gov.uk/support
 
+# You can combine the header links with custom layouts to manage the structure of your site.  This is particularly useful if you have large amounts of related content.  There is more information in the tech docs gem README https://github.com/alphagov/tech-docs-gem?tab=readme-ov-file#use-layouts-to-structure-your-table-of-contents
+
 # Enables search functionality. This indexes pages only and is not recommended for single-page sites.
 enable_search: false
 
