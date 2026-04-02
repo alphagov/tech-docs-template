@@ -32,7 +32,7 @@ GEM
     execjs (2.10.0)
     fast_blank (1.0.1)
     fastimage (2.4.1)
-    ffi (1.17.4-arm64-darwin)
+    ffi (1.17.4)
     haml (6.4.0)
       temple (>= 0.8.2)
       thor
@@ -138,7 +138,10 @@ GEM
     webrick (1.9.2)
 
 PLATFORMS
+  arm64-darwin
   arm64-darwin-25
+  ruby
+  x86_64-linux
 
 DEPENDENCIES
   jasmine
