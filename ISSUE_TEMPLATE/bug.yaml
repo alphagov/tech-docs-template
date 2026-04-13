@@ -1,0 +1,51 @@
+name: 🐛 Bug report
+description: Something is broken or not working as expected
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug in `tech-docs-template`
+        Please include as much detail as you can.  This will help us prioritise this issue correctly.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you expected to happen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: |
+        Tell us how to reproduce the issue.
+        Example:
+        1. Run `bundle exec middleman serve`
+        2. Visit `/guides/setup`
+        3. See white screen of death
+      placeholder: Step-by-step instructions
+    validations:
+      required: false
+
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or error output
+      description:
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I have searched for existing issues
+          required: true
+        - label: I have checked other users also have this issue
+          required: true
+        - label: I have checked that I am not using a local or forked repository with untested changes
+          required: true

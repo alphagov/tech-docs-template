@@ -1,0 +1,25 @@
+name: ✨ New or updated feature
+description: Suggest a new feature or improvement
+title: "[Enhancement]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What should change?
+      description: What would fix the issue? Is this something you think should behave differently, or something that you currently cannot do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: user need
+    attributes:
+      label: User need
+      description: Do you have evidence that the change will meet the needs of users? Let us know about any user research or testing you’ve done
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Optional — describe how you think this could work or a solution you have in mind
+
