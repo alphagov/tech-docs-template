@@ -8,16 +8,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0 # middleman init wants to clone the repo, so we need full history
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v6
         with:
-          node-version: '14'
+          node-version-file: '.nvmrc'
 
       - uses: ruby/setup-ruby@v1
         with:
+          ruby-version-file: '.ruby-version'
           bundler-cache: true
 
       - run: ./create-test-site.sh
