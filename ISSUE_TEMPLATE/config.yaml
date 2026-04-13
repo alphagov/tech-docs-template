@@ -1,0 +1,9 @@
+
+blank_issues_enabled: false
+contact_links:
+  - name: Create a new project
+    url: https://github.com/alphagov/tdt-documentation/tree/main/source/create_project
+    about: Information for creating and configuring a new project
+  - name: Ask a question or get help
+    url: https://ukgovernmentdigital.slack.com/archives/C1ZM2T0SG
+    about: Uk Government digital slack channel for Technical Writers

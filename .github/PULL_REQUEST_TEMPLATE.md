@@ -1,14 +1,28 @@
-<!--
-## Please fill in the sections below
+## Proposed changes
 
-After you submit your pull request, the technical writing team from the Central Digital and Data Office (CDDO) will discuss and prioritise it at our fortnightly triage meeting. We’ll then let you know if and when we’ll move it forward.
--->
+### What changed
 
-## What’s changed
+Describe the changes made and the impact the changes have.
 
-<!-- What are you trying to do? Is this something that changes how the Tech Docs Template behaves, or is it fixing a bug? -->
+## Related issue or tracking reference
 
+You should have an open GitHub issue that this PR will fix.  
 
-## Identifying a user need
+- Fixes #
+- Relates to #
 
-<!-- Do you have evidence that this meets the needs of users? Let us know about any user research or testing you’ve done. -->
+> If there is no issue, please open one or please explain why one is not needed (for example small maintenance change, routine dependency update).
+
+## Screenshots or examples (if relevant)
+
+Include screenshots, logs, or rendered output if this change affects layout or behaviour.
+
+## Checklist
+
+Before you request approval you should confirm that:
+
+- [ ] the pull request has a clear title with a short description about the update in the documentation
+- [ ] GitHub actions all pass
+- [ ] you have tested the changes with a fresh build against the latest version of the `tech-docs-gem`
+- [ ] you have linked this PR to an issue (or explained why none exists)
+- [ ] you have updated documentation if needed
