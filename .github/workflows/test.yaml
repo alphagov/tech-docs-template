@@ -7,6 +7,10 @@ jobs:
     name: Create test site
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        ruby: [ '3.3', '3.4', '4.0' ]
+
     steps:
       - uses: actions/checkout@v6
         with:
@@ -18,7 +22,8 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3.0'
+          ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
 
-      - run: ./create-test-site.sh
+      - name: Run tests
+        run: ./create-test-site.sh
