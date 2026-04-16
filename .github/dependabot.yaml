@@ -1,0 +1,54 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  # 1. Update Ruby dependencies (Gemfile/gemspec) in the root
+  - package-ecosystem: "bundler"
+    directory: "/" 
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    commit-message:
+      prefix: chore
+    open-pull-requests-limit: 5
+
+  # 2. Update GitHub Actions (keeps your CI workflows secure)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    commit-message:
+      prefix: chore
+    groups:
+      github-actions-updates:
+        patterns:
+          - "*"
+  - package-ecosystem: "npm"
+    directory: "/" 
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    open-pull-requests-limit: 5
+    
+    groups:
+      # Group all "development" dependencies (linters, test runners, etc.)
+      dev-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "patch"
+          - "minor"
+      
+      # Group all "production" dependencies (react, express, etc.) 
+      # but ONLY for minor/patch versions to avoid breaking changes
+      prod-safe-updates:
+        dependency-type: "production"
+        update-types:
+          - "patch"
+          - "minor"
