@@ -1,29 +1,29 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.2.3.1)
+    activesupport (8.1.3)
       base64
-      benchmark (>= 0.3)
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.3.1)
       connection_pool (>= 2.2.5)
       drb
       i18n (>= 1.6, < 2)
+      json
       logger (>= 1.4.2)
-      minitest (>= 5.1, < 6)
+      minitest (>= 5.1)
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
+      uri (>= 0.13.1)
     addressable (2.9.0)
       public_suffix (>= 2.0.2, < 8.0)
     base64 (0.3.0)
-    benchmark (0.5.0)
     bigdecimal (4.1.1)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.3.6)
-    connection_pool (2.5.5)
+    connection_pool (3.0.2)
     contracts (0.17.3)
     diff-lcs (1.6.2)
     dotenv (3.2.0)
@@ -33,8 +33,16 @@ GEM
     fast_blank (1.0.1)
     fastimage (2.4.1)
     ffi (1.17.4)
+    ffi (1.17.4-aarch64-linux-gnu)
+    ffi (1.17.4-aarch64-linux-musl)
+    ffi (1.17.4-arm-linux-gnu)
+    ffi (1.17.4-arm-linux-musl)
     ffi (1.17.4-arm64-darwin)
+    ffi (1.17.4-x86-linux-gnu)
+    ffi (1.17.4-x86-linux-musl)
     ffi (1.17.4-x86_64-darwin)
+    ffi (1.17.4-x86_64-linux-gnu)
+    ffi (1.17.4-x86_64-linux-musl)
     haml (6.4.0)
       temple (>= 0.8.2)
       thor
@@ -52,6 +60,7 @@ GEM
       rake
       webrick
     jasmine-core (3.99.0)
+    json (2.19.3)
     kramdown (2.5.2)
       rexml (>= 3.4.4)
     listen (3.10.0)
@@ -93,16 +102,19 @@ GEM
       toml
       uglifier (>= 3, < 5)
       webrick
-    minitest (5.27.0)
+    minitest (6.0.4)
+      drb (~> 2.0)
+      prism (~> 1.5)
     padrino-helpers (0.16.1)
       i18n (>= 0.6.7, < 2)
       padrino-support (= 0.16.1)
       tilt (>= 2.1, < 3)
     padrino-support (0.16.1)
-    parallel (1.28.0)
+    parallel (2.0.1)
     parslet (2.0.0)
     phantomjs (2.1.1.0)
-    public_suffix (6.0.2)
+    prism (1.9.0)
+    public_suffix (7.0.5)
     rack (3.2.6)
     rackup (2.3.1)
       rack (>= 3)
@@ -137,12 +149,21 @@ GEM
       concurrent-ruby (~> 1.0)
     uglifier (4.2.1)
       execjs (>= 0.3.0, < 3)
+    uri (1.1.1)
     webrick (1.9.2)
 
 PLATFORMS
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm-linux-gnu
+  arm-linux-musl
   arm64-darwin
   ruby
+  x86-linux-gnu
+  x86-linux-musl
   x86_64-darwin
+  x86_64-linux-gnu
+  x86_64-linux-musl
 
 DEPENDENCIES
   jasmine
@@ -151,4 +172,4 @@ DEPENDENCIES
   rspec
 
 BUNDLED WITH
-   2.5.22
+   2.6.9
