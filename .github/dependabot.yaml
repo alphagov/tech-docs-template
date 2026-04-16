@@ -29,26 +29,3 @@ updates:
       github-actions-updates:
         patterns:
           - "*"
-  - package-ecosystem: "npm"
-    directory: "/" 
-    schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "06:00"
-    open-pull-requests-limit: 5
-    
-    groups:
-      # Group all "development" dependencies (linters, test runners, etc.)
-      dev-dependencies:
-        dependency-type: "development"
-        update-types:
-          - "patch"
-          - "minor"
-      
-      # Group all "production" dependencies (react, express, etc.) 
-      # but ONLY for minor/patch versions to avoid breaking changes
-      prod-safe-updates:
-        dependency-type: "production"
-        update-types:
-          - "patch"
-          - "minor"
