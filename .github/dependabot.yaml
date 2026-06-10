@@ -14,6 +14,13 @@ updates:
       time: "06:00"
     commit-message:
       prefix: chore
+    groups:
+      safe-updates:
+        update-types: [ "minor", "patch" ]
+        patterns: [ "*" ]
+      security:
+        applies-to: "security-updates"
+        patterns: [ "*" ]
     open-pull-requests-limit: 5
 
   # 2. Update GitHub Actions (keeps your CI workflows secure)
