@@ -1,0 +1,14 @@
+name: pipeline
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+# needs a linting step
+jobs:
+  dependency-review:
+    uses: ./.github/workflows/dependency-review.yaml
+
+  test:
+    needs: dependency-review
+    uses: ./.github/workflows/test.yaml
