@@ -67,39 +67,42 @@ module Middleman
 
     def ask_about_documentation_url
       return unless @first_time
-
-      @documentation_url = ENV['DOCUMENTATION_URL'] || ask(
-        <<-MESSAGE
-What will the URL of your documentation be, for example https://example-docs.gov.uk? You can change this later in config/tech-docs.yml. 
-        MESSAGE
-      )
+      if ENV['DOCUMENTATION_URL']
+        @documentation_url = ENV['DOCUMENTATION_URL']
+      else
+        say "What will the URL of your documentation be, for example https://example-docs.gov.uk?", :blue
+        say "You can change this later in config/tech-docs.yml.", :blue
+        @documentation_url = ask("Documentation URL:")
+      end
     end
 
     def ask_about_service_name
       return unless @first_time
-
-      @service_name = ENV['SERVICE_NAME'] || ask(
-        <<-MESSAGE
-What is the name of the service or API your documentation is about, for example Data sharing service? You can change this later in config/tech-docs.yml. 
-        MESSAGE
-      )
+      if ENV['SERVICE_NAME']
+        @service_name = ENV['SERVICE_NAME']
+      else
+        say "What is the name of the service or API your documentation is about, for example Data sharing service?", :yellow
+        say "You can change this later in config/tech-docs.yml.", :yellow
+        @service_name = ask("Service Name:")
+      end
     end
 
     def ask_about_service_url
       return unless @first_time
 
-      @service_url = ENV['SERVICE_URL'] || ask(
-        <<-MESSAGE
-What is the URL for the service your documentation is about, for example https://new-service.gov.uk? You can change this later in config/tech-docs.yml. 
-        MESSAGE
-      )
+      if ENV['SERVICE_URL']
+        @service_url = ENV['SERVICE_URL']
+      else
+        say "What is the URL for the service your documentation is about, for example https://new-service.gov.uk?", :green
+        say "You can change this later in config/tech-docs.yml.", :green
+        @service_url = ask("Service URL:")
       end
+    end
 
     # TODO:: once https://github.com/alphagov/tech-docs-gem/issues/516 is complete,
     # also set gov.uk branding or generic header/font etc based on this
     def ask_about_govuk_logo
       return unless @first_time
-
       if option_set?('USE_GOVUK_LOGO')
         @use_govuk_logo = parse_boolean('USE_GOVUK_LOGO')
       else
