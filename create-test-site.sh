@@ -6,10 +6,11 @@ set -xe
 
 # The `middleman init` script can be configured with environment variables
 # instead of the interactive prompt.
-export FIRST_TIME=true
-export USE_PAAS=true
-export APPLICATION_NAME=larry-the-cat
-export CANONICAL_HOST=larry-the-cat.cloudapps.digital
+#export FIRST_TIME=true
+#export USE_GOVUK_LOGO=true
+#export SERVICE_NAME=example service
+#export SERVICE_URL=example-service.cloudapps.digital
+#export DOCUMENTATION_URL=example.docs
 
 bundle exec middleman init tmp/test-run -T file://$(pwd)
 cd tmp/test-run
