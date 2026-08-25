@@ -1,6 +1,6 @@
 ## [Unreleased]
 
-## 1.0.0
+## 1.1.0
 
 - Baseline release established. Historical changes prior to this date (25/08/2026) can be found in the git commit history.
 
