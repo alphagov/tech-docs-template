@@ -124,7 +124,7 @@ e.g. docs.larry-the-cat.service.gov.uk
 
       inside(__dir__) do
         remote = run('git remote get-url origin', capture: true).strip
-        revision = run('git rev-parse head', capture: true).strip
+        revision = run('git rev-parse HEAD', capture: true).strip
       end
 
       raise 'Unable to get remote / revision' unless remote && revision
