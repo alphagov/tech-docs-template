@@ -1,5 +1,5 @@
 ## [Unreleased]
-## [2.0.0]
+## [1.2.0]
 
 ### Added
 - Added new configuration prompts for `SERVICE_NAME` during initial setup.
