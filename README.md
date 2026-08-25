@@ -3,7 +3,7 @@
 The Tech Docs Template is a [Middleman template][mmt] that
 you can use to build technical documentation using a GOV.UK style.
 
-This repo is the template used to generate new sites. The generated site uses HTML, CSS, JS and images from the [tech docs gem](https://github.com/alphagov/tech-docs-gem).
+This repo is the template used to generate new sites. The generated site uses HTML, CSS, JS and images from the [tech docs gem][gem].
 
 You’re welcome to use the template even if your service isn’t considered part of GOV.UK, but your site or service must not:
 
@@ -30,11 +30,5 @@ The documentation is [© Crown copyright][copyright] and available under the ter
 [ogl]: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
 [mmt]: https://middlemanapp.com/advanced/project_templates/
 [tdt-docs]: https://alphagov.github.io/tech-docs-gem/
-[config]: https://alphagov.github.io/tech-docs-gem//amend_project/configuration/#configuration-options
-[frontmatter]: https://alphagov.github.io/tech-docs-gem//frontmatter.html#frontmatter
-[multipage]: https://alphagov.github.io/tech-docs-gem//create_project/multipage/#build-a-multipage-documentation-site
-[example-content]: https://alphagov.github.io/tech-docs-gem//amend_project/content/#change-your-content
-[partials]: https://alphagov.github.io/tech-docs-gem//create_project/single_page/#add-partial-lines
-[contribute]: https://alphagov.github.io/tech-docs-gem//support/#contribute
-[install-ruby]: https://alphagov.github.io/tech-docs-gem//create_project/setup_local/#install-ruby
-[install-middleman]: https://alphagov.github.io/tech-docs-gem//create_project/setup_local/#install-ruby
+[gem]: https://github.com/alphagov/tech-docs-gem
+[contribute]: https://alphagov.github.io/tech-docs-gem/support/#contribute
