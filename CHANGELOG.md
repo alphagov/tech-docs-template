@@ -1,5 +1,18 @@
 ## [Unreleased]
-## [1.2.0]
+
+## 1.3.0
+
+### Added
+
+New config settings to match gem version 6.5.0:
+- headerContainerClasses
+- headerClasses
+- navigationContainerClasses
+- navigationClasses
+- footerContainerClasses
+- footerClasses
+
+## 1.2.0
 
 ### Added
 - Added new configuration prompts for `SERVICE_NAME` during initial setup.
