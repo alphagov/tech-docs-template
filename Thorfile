@@ -65,45 +65,51 @@ module Middleman
       directory 'template', '.', exclude_pattern: /\.DS_Store$/
     end
 
-    def ask_about_paas
+    def ask_about_documentation_url
       return unless @first_time
-
-      if option_set?('USE_PAAS')
-        @use_paas = parse_boolean('USE_PAAS')
+      if ENV['DOCUMENTATION_URL']
+        @documentation_url = ENV['DOCUMENTATION_URL']
       else
-        @use_paas = yes?('Will you be deploying this on GOV.UK PaaS?')
+        say "What will the URL of your documentation be, for example https://example-docs.gov.uk?", :blue
+        say "You can change this later in config/tech-docs.yml.", :blue
+        @documentation_url = ask("Documentation URL:")
       end
-
-      return unless @use_paas
-
-      @application_name = ENV['APPLICATION_NAME'] || ask(
-        <<-MESSAGE
-What is the name of your application on PaaS?
-If your application URL is larry-the-cat.cloudapps.digital, this will be "larry-the-cat".
-        MESSAGE
-      )
     end
 
-    def ask_about_canonical_host
+    def ask_about_service_name
+      return unless @first_time
+      if ENV['SERVICE_NAME']
+        @service_name = ENV['SERVICE_NAME']
+      else
+        say "What is the name of the service or API your documentation is about, for example Data sharing service?", :yellow
+        say "You can change this later in config/tech-docs.yml.", :yellow
+        @service_name = ask("Service Name:")
+      end
+    end
+
+    def ask_about_service_url
       return unless @first_time
 
-      @canonical_host = ENV['CANONICAL_HOST'] || ask(
-        <<-MESSAGE
-What is the canonical hostname of your application?
-e.g. docs.larry-the-cat.service.gov.uk
-        MESSAGE
-      )
+      if ENV['SERVICE_URL']
+        @service_url = ENV['SERVICE_URL']
+      else
+        say "What is the URL for the service your documentation is about, for example https://new-service.gov.uk?", :green
+        say "You can change this later in config/tech-docs.yml.", :green
+        @service_url = ask("Service URL:")
+      end
     end
 
-    def configure_paas
+    # TODO:: once https://github.com/alphagov/tech-docs-gem/issues/516 is complete,
+    # also set gov.uk branding or generic header/font etc based on this
+    def ask_about_govuk_logo
       return unless @first_time
-      return unless @use_paas
-
-      template 'optional/manifest.yml', 'manifest.yml'
-      copy_file 'optional/nginx.conf', 'source/nginx.conf'
-      gsub_file 'source/nginx.conf', '__CANONICAL_HOST__', @canonical_host
-      directory 'optional/script', 'script'
+      if option_set?('USE_GOVUK_LOGO')
+        @use_govuk_logo = parse_boolean('USE_GOVUK_LOGO')
+      else
+        @use_govuk_logo = yes?('Will you be using the GOV.UK logo?')
+      end
     end
+
 
     def configure_tech_docs
       return unless @first_time

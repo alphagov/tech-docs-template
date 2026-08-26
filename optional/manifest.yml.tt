@@ -1,7 +1,0 @@
----
-applications:
-- name: <%= @application_name %>
-  memory: 64M
-  instances: 2
-  path: ./build
-  buildpack: staticfile_buildpack

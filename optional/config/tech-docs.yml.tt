@@ -1,18 +1,18 @@
 # Host to use for canonical URL generation (without trailing slash)
-host: <%= @canonical_host %>
+host: <%= @documentation_url %>
 
 # Header-related options
-show_govuk_logo: true
-service_name: Name of API
-service_link: https://www.larry-the-cat.service.gov.uk
+show_govuk_logo: <%= @use_govuk_logo %>
+service_name: <%= @service_name %>
+service_link: <%= @service_url %>
 phase: Beta
 
 # Links to show on right-hand-side of header
 header_links:
-  About: https://www.larry-the-cat.service.gov.uk/about
-  Get Started: https://www.larry-the-cat.service.gov.uk/get-started
-  Documentation: /
-  Support: https://www.larry-the-cat.service.gov.uk/support
+  About: <%= @service_url %>/about
+  Get Started: <%= @service_url %>/get-started
+  Documentation: <%= @documentation_url %>
+  Support: <%= @service_url %>/support
 
 # Enables search functionality. This indexes pages only and is not recommended for single-page sites.
 enable_search: false
