@@ -2,6 +2,7 @@
 host: <%= @documentation_url %>
 
 # Header-related options
+product_name:
 show_govuk_logo: <%= @use_govuk_logo %>
 service_name: <%= @service_name %>
 service_link: <%= @service_url %>
@@ -13,6 +14,18 @@ header_links:
   Get Started: <%= @service_url %>/get-started
   Documentation: <%= @documentation_url %>
   Support: <%= @service_url %>/support
+
+#These can be used to add custom classes to the GOV.UK header, footer and service navigation components. You can find more detail about these on the component documentation at:
+#https://design-system.service.gov.uk/components/header/
+#https://design-system.service.gov.uk/components/service-navigation/
+#https://design-system.service.gov.uk/components/footer/
+
+headerContainerClasses:
+headerClasses:
+navigationContainerClasses:
+navigationClasses:
+footerContainerClasses:
+footerClasses:
 
 # Enables search functionality. This indexes pages only and is not recommended for single-page sites.
 enable_search: false
