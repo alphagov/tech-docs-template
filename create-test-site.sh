@@ -19,7 +19,7 @@ bundle install
 
 echo -e "\n--- SPROCKETS LOAD PATHS ---"
 # This boots Middleman and asks it to list every folder it checks for assets
-echo 'puts app.sprockets.paths' | bundle exec middleman console
+echo 'puts sprockets.paths' | bundle exec middleman console
 
 # Proceed with the failing build step so we can see the exact error context
-bundle exec middleman build --verbose
+#bundle exec middleman build --verbose
