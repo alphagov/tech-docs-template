@@ -30,16 +30,25 @@ echo -e "\n--- 3. SOURCE/ASSET FOLDERS ---"
 # Middleman usually keeps assets in source/javascripts or source/stylesheets
 ls -la source/ 2>/dev/null || echo "No source/ directory found"
 
+echo -e "\n--- 3. FILE CONTENTS ---"
+TARGET_FILE="./lib/assets/stylesheets/_govuk_tech_docs.scss"
+
+if [ -f "$TARGET_FILE" ]; then
+  cat "$TARGET_FILE"
+else
+  echo "File not found: $TARGET_FILE"
+fi
+
 echo -e "\n--- 4. BUNDLED GEM LOCATION & CONTENTS ---"
 # This checks where Bundler actually put your gem and if the JS assets came with it
 # IMPORTANT: Change 'your_gem_name' below to the actual name of your gem in the Gemfile
-GEM_NAME="your_gem_name"
+GEM_NAME="govuk_tech_docs"
 GEM_PATH=$(bundle info $GEM_NAME --path 2>/dev/null || echo "NOT_FOUND")
 
 if [ "$GEM_PATH" != "NOT_FOUND" ]; then
   echo "Gem is installed at: $GEM_PATH"
   echo "Checking for assets inside the installed gem:"
-  ls -la "$GEM_PATH/node_modules/gem" 2>/dev/null || echo "node_modules/gem directory is MISSING inside the installed gem cache!"
+  ls -la "$GEM_PATH/node_modules/govuk-frontend" 2>/dev/null || echo "node_modules/govuk-frontend directory is MISSING inside the installed gem cache!"
 else
   echo "WARNING: $GEM_NAME is not in the downstream project's Gemfile!"
 fi
