@@ -15,36 +15,4 @@ export DOCUMENTATION_URL=example.docs
 bundle exec middleman init tmp/test-run -T file://$(pwd)
 cd tmp/test-run
 bundle install
-
-echo "----------"
-
-bundle show govuk_tech_docs
-find "$(bundle show govuk_tech_docs)" -maxdepth 3 \
-  \( -name package.json -o -name nunjucks -o -name govuk-frontend \)
-
-echo "----------"
-GEM_ROOT="$(bundle show govuk_tech_docs)"
-
-cat "$GEM_ROOT/package.json"
-
-echo "---------"
-
-cd "$GEM_ROOT"
-
-npm ls govuk-frontend nunjucks
-node -p "require.resolve('govuk-frontend/package.json')"
-node -p "require.resolve('nunjucks')"
-
-echo "----------"
-grep -RIn \
-  -e 'node_modules' \
-  -e 'govuk-frontend' \
-  -e 'spec.files' \
-  -e 'npm install' \
-  -e 'npm ci' \
-  . \
-  --include='*.gemspec' \
-  --include='Rakefile' \
-  --include='*.rake'
-
-#bundle exec middleman build --verbose
+bundle exec middleman build --verbose
