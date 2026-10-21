@@ -34,4 +34,17 @@ cd "$GEM_ROOT"
 npm ls govuk-frontend nunjucks
 node -p "require.resolve('govuk-frontend/package.json')"
 node -p "require.resolve('nunjucks')"
+
+echo "----------"
+grep -RIn \
+  -e 'node_modules' \
+  -e 'govuk-frontend' \
+  -e 'spec.files' \
+  -e 'npm install' \
+  -e 'npm ci' \
+  . \
+  --include='*.gemspec' \
+  --include='Rakefile' \
+  --include='*.rake'
+
 #bundle exec middleman build --verbose
