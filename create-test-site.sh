@@ -15,7 +15,7 @@ export DOCUMENTATION_URL=example.docs
 bundle exec middleman init tmp/test-run -T file://$(pwd)
 cd tmp/test-run
 bundle install
-bundle show govuk-tech-docs
-find "$(bundle show govuk-tech-docs)" -maxdepth 3 \
+bundle show govuk_tech_docss
+find "$(bundle show govuk_tech_docs)" -maxdepth 3 \
   \( -name package.json -o -name nunjucks -o -name govuk-frontend \)
 #bundle exec middleman build --verbose
