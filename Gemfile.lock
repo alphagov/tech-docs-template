@@ -116,7 +116,7 @@ GEM
     phantomjs (2.1.1.0)
     prism (1.9.0)
     public_suffix (7.0.5)
-    rack (3.2.7)
+    rack (3.2.8)
     rackup (2.3.1)
       rack (>= 3)
     rake (13.4.2)
@@ -222,7 +222,7 @@ CHECKSUMS
   phantomjs (2.1.1.0) sha256=b392cfba33d374285d022c905c714948fc1a69d162cd17cfea39b684fd5a1779
   prism (1.9.0) sha256=7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85
   public_suffix (7.0.5) sha256=1a8bb08f1bbea19228d3bed6e5ed908d1cb4f7c2726d18bd9cadf60bc676f623
-  rack (3.2.7) sha256=93e13e1c24f93556671d85d2d79fa228c3485815c50d7e2f265b5330c6528fb7
+  rack (3.2.8) sha256=1fecc85e463ebc7a2a945fff829ffcd549babeb1556384796fad946c28dc4ec7
   rackup (2.3.1) sha256=6c79c26753778e90983761d677a48937ee3192b3ffef6bc963c0950f94688868
   rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
   rb-fsevent (0.11.2) sha256=43900b972e7301d6570f64b850a5aa67833ee7d87b458ee92805d56b7318aefe
