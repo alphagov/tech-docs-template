@@ -1,5 +1,5 @@
 # Host to use for canonical URL generation (without trailing slash)
-host: <%= @documentation_url %>
+host: <%= @documentation_url.presence || "/" %>
 
 # Header-related options
 product_name:
@@ -12,7 +12,6 @@ phase: Beta
 header_links:
   About: <%= @service_url %>/about
   Get Started: <%= @service_url %>/get-started
-  Documentation: <%= @documentation_url %>
   Support: <%= @service_url %>/support
 
 #These can be used to add custom classes to the GOV.UK header, footer and service navigation components. You can find more detail about these on the component documentation at:
